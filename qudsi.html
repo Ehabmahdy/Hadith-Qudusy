@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأحاديث القدسية — أثر</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep: #0D1B2A;
+  --deep2: #1B2B3C;
+  --deep3: #243447;
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-pale: #F5E6BB;
+  --gold-dark: #8B6914;
+  --cream: #FAF6EF;
+  --cream2: #F2EBD9;
+  --ink: #2C2416;
+  --ink2: #5A4E3A;
+  --ink3: #8C7D65;
+  --border-dark: rgba(201,168,76,0.2);
+  --border-light: rgba(196,154,60,0.25);
+  --white: #FFFDF8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:var(--deep);color:#fff;min-height:100vh;overflow-x:hidden;}
+
+/* GEOMETRIC BG */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.12'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 12L68 40L40 68L12 40Z'/%3E%3Cpath d='M40 24L56 40L40 56L24 40Z'/%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3Ccircle cx='0' cy='0' r='6'/%3E%3Ccircle cx='80' cy='0' r='6'/%3E%3Ccircle cx='0' cy='80' r='6'/%3E%3Ccircle cx='80' cy='80' r='6'/%3E%3C/g%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1;}
+
+/* HEADER */
+header{
+  background:rgba(13,27,42,0.95);backdrop-filter:blur(12px);
+  height:66px;padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:200;
+  border-bottom:1px solid var(--border-dark);
+}
+.logo{font-family:'Amiri',serif;font-size:2rem;color:var(--gold-light);}
+.logo span{font-family:'Cairo',sans-serif;font-size:.82rem;color:rgba(255,255,255,.4);font-weight:300;margin-right:10px;}
+.header-right{display:flex;gap:10px;align-items:center;}
+.print-btn{
+  background:var(--gold);color:var(--deep);border:none;border-radius:18px;
+  padding:6px 16px;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;
+  cursor:pointer;transition:background .2s;
+}
+.print-btn:hover{background:var(--gold-light);}
+.back-btn{color:var(--gold-light);font-size:.8rem;border:1px solid var(--border-dark);padding:5px 14px;border-radius:18px;cursor:pointer;}
+
+/* HERO */
+.hero{
+  text-align:center;padding:56px 24px 48px;
+  background:linear-gradient(180deg,rgba(201,168,76,0.06) 0%,transparent 100%);
+  position:relative;
+}
+.hero::after{
+  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:300px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.hero-label{
+  font-size:.75rem;letter-spacing:3px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:16px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.hero-label::before,.hero-label::after{content:'';width:40px;height:1px;background:var(--gold);}
+.hero h1{
+  font-family:'Amiri',serif;font-size:clamp(2rem,6vw,4rem);
+  color:var(--gold-light);line-height:1.3;margin-bottom:8px;
+}
+.hero-sub{color:rgba(255,255,255,.5);font-size:.9rem;font-weight:300;margin-bottom:28px;}
+.qudsi-def{
+  max-width:600px;margin:0 auto 28px;
+  background:rgba(201,168,76,0.07);
+  border:1px solid var(--border-dark);border-radius:12px;
+  padding:1.2rem 1.6rem;
+}
+.qudsi-def p{font-family:'Amiri',serif;font-size:1rem;color:rgba(255,255,255,.8);line-height:1.9;}
+.qudsi-def cite{font-size:.75rem;color:var(--gold);display:block;margin-top:6px;}
+.hero-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}
+.hero-stat .n{font-family:'Amiri',serif;font-size:1.8rem;color:var(--gold-light);display:block;}
+.hero-stat .l{font-size:.72rem;color:rgba(255,255,255,.4);}
+
+/* TOOLBAR */
+.toolbar{
+  background:rgba(13,27,42,0.85);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border-dark);
+  padding:.9rem 2rem;display:flex;gap:.7rem;flex-wrap:wrap;align-items:center;
+  position:sticky;top:66px;z-index:190;
+}
+.search-wrap{flex:1;min-width:180px;position:relative;}
+.search-wrap input{
+  width:100%;background:rgba(255,255,255,0.05);
+  border:1px solid var(--border-dark);border-radius:8px;
+  padding:9px 14px 9px 38px;
+  font-family:'Cairo',sans-serif;font-size:.88rem;
+  color:#fff;outline:none;transition:border .2s;
+}
+.search-wrap input::placeholder{color:rgba(255,255,255,.3);}
+.search-wrap input:focus{border-color:var(--gold);}
+.si{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:13px;color:rgba(255,255,255,.3);}
+.fb{
+  padding:6px 14px;border-radius:16px;font-family:'Cairo',sans-serif;font-size:.76rem;
+  cursor:pointer;border:1px solid var(--border-dark);
+  background:rgba(255,255,255,.04);color:rgba(255,255,255,.6);
+  transition:all .2s;white-space:nowrap;
+}
+.fb:hover{border-color:var(--gold);color:var(--gold-light);}
+.fb.on{border-color:var(--gold);background:var(--gold);color:var(--deep);font-weight:700;}
+.count-pill{font-size:.75rem;color:rgba(255,255,255,.35);margin-right:auto;white-space:nowrap;}
+.count-pill strong{color:var(--gold-light);}
+
+/* VIEW TOGGLE */
+.view-btns{display:flex;gap:4px;}
+.vb{
+  padding:6px 12px;border-radius:8px;font-family:'Cairo',sans-serif;font-size:.76rem;
+  cursor:pointer;border:1px solid var(--border-dark);
+  background:transparent;color:rgba(255,255,255,.4);transition:all .2s;
+}
+.vb.on{background:rgba(201,168,76,0.15);border-color:var(--gold);color:var(--gold-light);}
+
+/* MAIN */
+.main{max-width:1100px;margin:0 auto;padding:2rem;}
+
+/* GRID VIEW */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;}
+
+/* CARD */
+.qcard{
+  background:rgba(27,43,60,0.7);border:1px solid var(--border-dark);
+  border-radius:16px;overflow:hidden;cursor:pointer;
+  transition:all .25s;position:relative;
+  backdrop-filter:blur(4px);
+}
+.qcard:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 32px rgba(201,168,76,0.12);}
+.qcard.open{border-color:var(--gold);}
+.qcard.open .qcard-top{border-bottom:1px solid var(--border-dark);}
+.qcard-num{
+  position:absolute;top:12px;left:14px;
+  font-size:.65rem;color:rgba(255,255,255,.2);font-weight:300;
+}
+.qcard-top{padding:1.4rem 1.2rem 1rem;border-bottom:1px solid transparent;transition:border .2s;}
+.qcard-preview{
+  font-family:'Amiri',serif;font-size:1.05rem;
+  color:rgba(255,255,255,.85);line-height:1.9;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  margin-bottom:.8rem;
+}
+.qcard.open .qcard-preview{-webkit-line-clamp:unset;overflow:visible;}
+.qcard-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.narrator{font-size:.72rem;color:var(--gold);background:rgba(201,168,76,0.1);border:1px solid var(--border-dark);border-radius:8px;padding:2px 10px;}
+.source{font-size:.7rem;color:rgba(255,255,255,.35);direction:ltr;}
+.grade-badge{font-size:.65rem;padding:2px 8px;border-radius:6px;font-weight:700;}
+.grade-sahih{background:rgba(46,100,66,0.3);color:#7EB895;border:1px solid rgba(46,100,66,0.4);}
+.grade-hasan{background:rgba(100,85,20,0.3);color:#C9A84C;border:1px solid rgba(100,85,20,0.4);}
+
+/* EXPANDED */
+.qcard-body{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s;}
+.qcard.open .qcard-body{max-height:600px;padding:1rem 1.2rem 1.2rem;}
+.full-text{
+  font-family:'Amiri',serif;font-size:1.05rem;
+  color:rgba(255,255,255,.85);line-height:2;
+  background:rgba(201,168,76,0.05);border-right:3px solid var(--gold);
+  border-radius:0 8px 8px 0;padding:1rem 1.1rem;
+  margin-bottom:1rem;
+}
+.section-label{
+  font-size:.65rem;font-weight:700;color:var(--gold);
+  letter-spacing:1px;margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border-dark);}
+.source-box{background:rgba(255,255,255,.04);border:1px solid var(--border-dark);border-radius:8px;padding:.7rem 1rem;}
+.source-row{display:flex;justify-content:space-between;font-size:.76rem;padding:3px 0;}
+.source-row .key{color:rgba(255,255,255,.35);}
+.source-row .val{color:rgba(255,255,255,.7);direction:ltr;text-align:left;}
+
+/* LIST VIEW */
+.list-view{display:flex;flex-direction:column;gap:.8rem;}
+.litem{
+  background:rgba(27,43,60,0.7);border:1px solid var(--border-dark);
+  border-radius:12px;padding:1.2rem 1.4rem;cursor:pointer;
+  display:grid;grid-template-columns:48px 1fr auto;gap:1rem;align-items:center;
+  transition:all .25s;backdrop-filter:blur(4px);
+}
+.litem:hover{border-color:var(--gold);}
+.litem-num{
+  font-family:'Amiri',serif;font-size:1.8rem;color:var(--gold);
+  text-align:center;line-height:1;
+}
+.litem-text{
+  font-family:'Amiri',serif;font-size:.95rem;color:rgba(255,255,255,.8);
+  line-height:1.8;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.litem-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+
+/* MODAL */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:500;
+  background:rgba(5,12,22,0.85);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:1rem;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:var(--deep2);border:1px solid var(--gold);border-radius:20px;
+  max-width:640px;width:100%;max-height:85vh;overflow-y:auto;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.1);
+}
+.modal-close{
+  position:absolute;top:14px;left:14px;
+  background:rgba(255,255,255,.07);border:none;border-radius:50%;
+  width:32px;height:32px;cursor:pointer;color:rgba(255,255,255,.5);font-size:16px;
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.modal-close:hover{background:rgba(201,168,76,.15);color:var(--gold-light);}
+.modal-num{
+  text-align:center;padding:2rem 2rem 1rem;
+  font-family:'Amiri',serif;font-size:3rem;color:var(--gold);line-height:1;
+}
+.modal-num small{display:block;font-size:.9rem;color:rgba(255,255,255,.3);font-family:'Cairo',sans-serif;margin-top:4px;}
+.modal-hadith{
+  font-family:'Amiri',serif;font-size:1.15rem;color:rgba(255,255,255,.9);
+  line-height:2.1;padding:0 2rem 1.4rem;text-align:justify;
+}
+.modal-divider{height:1px;background:var(--border-dark);margin:0 2rem;}
+.modal-meta{padding:1.2rem 2rem 2rem;display:flex;flex-direction:column;gap:.5rem;}
+.modal-row{display:flex;justify-content:space-between;font-size:.8rem;align-items:center;}
+.modal-row .mk{color:rgba(255,255,255,.35);}
+.modal-row .mv{color:rgba(255,255,255,.75);}
+.modal-row .mv.ltr{direction:ltr;text-align:left;}
+
+/* EMPTY */
+.empty{text-align:center;padding:4rem;color:rgba(255,255,255,.2);}
+.empty-ar{font-family:'Amiri',serif;font-size:2rem;color:rgba(201,168,76,.2);display:block;margin-bottom:8px;}
+
+/* PRINT */
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  header,.toolbar,.modal-overlay,.print-btn,.back-btn,.view-btns{display:none!important;}
+  body{background:#0D1B2A!important;}
+  body::before{display:none;}
+  .hero{padding:1rem;background:#0D1B2A!important;}
+  .hero h1{color:#E8C97A!important;}
+  .main{padding:.5rem;}
+  .cards-grid{grid-template-columns:repeat(2,1fr);gap:.6rem;}
+  .qcard{page-break-inside:avoid;background:#1B2B3C!important;}
+  .qcard-body{max-height:none!important;padding:1rem 1.2rem!important;}
+  .list-view{display:none!important;}
+}
+@media(max-width:640px){
+  header{padding:0 1rem;}
+  .toolbar{padding:.7rem 1rem;}
+  .main{padding:1rem;}
+  .cards-grid{grid-template-columns:1fr;}
+  .litem{grid-template-columns:36px 1fr;gap:.7rem;}
+  .litem-meta{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo">أثر <span>/ المكتبة الإسلامية الرقمية</span></div>
+  <div class="header-right">
+    <button class="print-btn" onclick="printAll()">🖨️ طباعة</button>
+    <div class="back-btn">← العودة</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-label">كلام الله على لسان نبيّه ﷺ</div>
+  <h1>الأحاديث القدسية</h1>
+  <p class="hero-sub">الأربعون القدسية — مرويّة بأسانيد صحيحة</p>
+  <div class="qudsi-def">
+    <p>الحديث القدسي: ما يرويه النبي ﷺ عن ربه عز وجل — وهو في معناه من عند الله، وفي لفظه من النبي ﷺ، ويختلف عن القرآن بأن القرآن معجز متعبَّد بتلاوته.</p>
+    <cite>— تعريف علماء الحديث</cite>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="n">٤٠</span><span class="l">حديثًا قدسيًا</span></div>
+    <div class="hero-stat"><span class="n">٩</span><span class="l">مصادر حديثية</span></div>
+    <div class="hero-stat"><span class="n">٣٨</span><span class="l">حديثًا صحيحًا</span></div>
+  </div>
+</div>
+
+<div class="toolbar">
+  <div class="search-wrap"><span class="si">🔍</span><input type="text" id="srch" placeholder="ابحث في الأحاديث..." oninput="render()"></div>
+  <button class="fb on" onclick="setF('all',this)">الكل</button>
+  <button class="fb" onclick="setF('sahih',this)">✅ صحيح</button>
+  <button class="fb" onclick="setF('hasan',this)">🟡 حسن</button>
+  <div class="count-pill">يُعرض <strong id="cnt">40</strong> حديثًا</div>
+  <div class="view-btns">
+    <button class="vb on" id="vgrid" onclick="setView('grid')">⊞ بطاقات</button>
+    <button class="vb" id="vlist" onclick="setView('list')">☰ قائمة</button>
+  </div>
+</div>
+
+<main class="main">
+  <div id="container"></div>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-num" id="mNum"></div>
+    <div class="modal-hadith" id="mText"></div>
+    <div class="modal-divider"></div>
+    <div class="modal-meta" id="mMeta"></div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+const ahadith = [
+  {
+    num:1, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا عِنْدَ ظَنِّ عَبْدِي بِي، وَأَنَا مَعَهُ إِذَا ذَكَرَنِي؛ فَإِنْ ذَكَرَنِي فِي نَفْسِهِ ذَكَرْتُهُ فِي نَفْسِي، وَإِنْ ذَكَرَنِي فِي مَلَإٍ ذَكَرْتُهُ فِي مَلَإٍ خَيْرٍ مِنْهُمْ، وَإِنْ تَقَرَّبَ إِلَيَّ شِبْرًا تَقَرَّبْتُ إِلَيْهِ ذِرَاعًا، وَإِنْ تَقَرَّبَ إِلَيَّ ذِرَاعًا تَقَرَّبْتُ إِلَيْهِ بَاعًا، وَإِنْ أَتَانِي يَمْشِي أَتَيْتُهُ هَرْوَلَةً.',
+    source:'صحيح البخاري', ref:'7405', topic:'الذكر والقرب من الله'
+  },
+  {
+    num:2, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَبَارَكَ وَتَعَالَى: يَا ابْنَ آدَمَ، أَنْفِقْ أُنْفِقْ عَلَيْكَ.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'الإنفاق في سبيل الله'
+  },
+  {
+    num:3, grade:'sahih',
+    narrator:'أبو ذر الغفاري رضي الله عنه',
+    text:'يَا عِبَادِي، إِنِّي حَرَّمْتُ الظُّلْمَ عَلَى نَفْسِي وَجَعَلْتُهُ بَيْنَكُمْ مُحَرَّمًا، فَلاَ تَظَالَمُوا. يَا عِبَادِي، كُلُّكُمْ ضَالٌّ إِلاَّ مَنْ هَدَيْتُهُ، فَاسْتَهْدُونِي أَهْدِكُمْ. يَا عِبَادِي، كُلُّكُمْ جَائِعٌ إِلاَّ مَنْ أَطْعَمْتُهُ، فَاسْتَطْعِمُونِي أُطْعِمْكُمْ. يَا عِبَادِي، كُلُّكُمْ عَارٍ إِلاَّ مَنْ كَسَوْتُهُ، فَاسْتَكْسُونِي أَكْسُكُمْ. يَا عِبَادِي، إِنَّكُمْ تُخْطِئُونَ بِاللَّيْلِ وَالنَّهَارِ، وَأَنَا أَغْفِرُ الذُّنُوبَ جَمِيعًا، فَاسْتَغْفِرُونِي أَغْفِرْ لَكُمْ.',
+    source:'صحيح مسلم', ref:'2577', topic:'العدل والهداية والمغفرة'
+  },
+  {
+    num:4, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: مَنْ عَادَى لِي وَلِيًّا فَقَدْ آذَنْتُهُ بِالْحَرْبِ، وَمَا تَقَرَّبَ إِلَيَّ عَبْدِي بِشَيْءٍ أَحَبَّ إِلَيَّ مِمَّا افْتَرَضْتُهُ عَلَيْهِ، وَمَا يَزَالُ عَبْدِي يَتَقَرَّبُ إِلَيَّ بِالنَّوَافِلِ حَتَّى أُحِبَّهُ، فَإِذَا أَحْبَبْتُهُ كُنْتُ سَمْعَهُ الَّذِي يَسْمَعُ بِهِ، وَبَصَرَهُ الَّذِي يُبْصِرُ بِهِ، وَيَدَهُ الَّتِي يَبْطِشُ بِهَا، وَرِجْلَهُ الَّتِي يَمْشِي بِهَا، وَإِنْ سَأَلَنِي لَأُعْطِيَنَّهُ، وَلَئِنِ اسْتَعَاذَ بِي لَأُعِيذَنَّهُ.',
+    source:'صحيح البخاري', ref:'6502', topic:'محبة الله للأولياء والصالحين'
+  },
+  {
+    num:5, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: الصَّوْمُ لِي وَأَنَا أَجْزِي بِهِ؛ يَدَعُ شَهْوَتَهُ وَأَكْلَهُ وَشُرْبَهُ مِنْ أَجْلِي. وَالصِّيَامُ جُنَّةٌ، وَلِلصَّائِمِ فَرْحَتَانِ: فَرْحَةٌ حِينَ يُفْطِرُ، وَفَرْحَةٌ حِينَ يَلْقَى رَبَّهُ. وَلَخُلُوفُ فَمِ الصَّائِمِ أَطْيَبُ عِنْدَ اللَّهِ مِنْ رِيحِ الْمِسْكِ.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'فضل الصيام'
+  },
+  {
+    num:6, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: أَعْدَدْتُ لِعِبَادِي الصَّالِحِينَ مَا لاَ عَيْنٌ رَأَتْ، وَلاَ أُذُنٌ سَمِعَتْ، وَلاَ خَطَرَ عَلَى قَلْبِ بَشَرٍ.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'نعيم الجنة'
+  },
+  {
+    num:7, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'لَمَّا قَضَى اللَّهُ الْخَلْقَ كَتَبَ فِي كِتَابِهِ، فَهُوَ عِنْدَهُ فَوْقَ الْعَرْشِ: إِنَّ رَحْمَتِي غَلَبَتْ غَضَبِي.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'سعة رحمة الله'
+  },
+  {
+    num:8, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: إِذَا هَمَّ عَبْدِي بِسَيِّئَةٍ فَلاَ تَكْتُبُوهَا عَلَيْهِ، فَإِنْ عَمِلَهَا فَاكْتُبُوهَا سَيِّئَةً. وَإِذَا هَمَّ بِحَسَنَةٍ فَلَمْ يَعْمَلْهَا فَاكْتُبُوهَا حَسَنَةً، فَإِنْ عَمِلَهَا فَاكْتُبُوهَا عَشْرًا.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'تضعيف الحسنات'
+  },
+  {
+    num:9, grade:'sahih',
+    narrator:'معاذ بن جبل رضي الله عنه',
+    text:'قَالَ اللَّهُ تَبَارَكَ وَتَعَالَى: الْمُتَحَابُّونَ فِي جَلاَلِي لَهُمْ مَنَابِرُ مِنْ نُورٍ، يَغْبِطُهُمُ النَّبِيُّونَ وَالشُّهَدَاءُ.',
+    source:'سنن الترمذي', ref:'2390 — صحيح', topic:'المحبة في الله'
+  },
+  {
+    num:10, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: يُؤْذِينِي ابْنُ آدَمَ، يَسُبُّ الدَّهْرَ وَأَنَا الدَّهْرُ، بِيَدِي الأَمْرُ أُقَلِّبُ اللَّيْلَ وَالنَّهَارَ.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'النهي عن سب الدهر'
+  },
+  {
+    num:11, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَسَمْتُ الصَّلاَةَ بَيْنِي وَبَيْنَ عَبْدِي نِصْفَيْنِ، وَلِعَبْدِي مَا سَأَلَ. فَإِذَا قَالَ: الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ، قَالَ اللَّهُ: حَمِدَنِي عَبْدِي. وَإِذَا قَالَ: الرَّحْمَنِ الرَّحِيمِ، قَالَ اللَّهُ: أَثْنَى عَلَيَّ عَبْدِي. وَإِذَا قَالَ: مَالِكِ يَوْمِ الدِّينِ، قَالَ: مَجَّدَنِي عَبْدِي. وَإِذَا قَالَ: إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ، قَالَ: هَذَا بَيْنِي وَبَيْنَ عَبْدِي، وَلِعَبْدِي مَا سَأَلَ.',
+    source:'صحيح مسلم', ref:'395', topic:'فضل الفاتحة'
+  },
+  {
+    num:12, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: الْكِبْرِيَاءُ رِدَائِي وَالْعَظَمَةُ إِزَارِي، فَمَنْ نَازَعَنِي وَاحِدًا مِنْهُمَا قَذَفْتُهُ فِي النَّارِ.',
+    source:'سنن أبي داود وابن ماجه', ref:'صحيح', topic:'النهي عن الكبر'
+  },
+  {
+    num:13, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: ثَلاَثَةٌ أَنَا خَصْمُهُمْ يَوْمَ الْقِيَامَةِ: رَجُلٌ أَعْطَى بِي ثُمَّ غَدَرَ، وَرَجُلٌ بَاعَ حُرًّا فَأَكَلَ ثَمَنَهُ، وَرَجُلٌ اسْتَأْجَرَ أَجِيرًا فَاسْتَوْفَى مِنْهُ وَلَمْ يُعْطِهِ أَجْرَهُ.',
+    source:'صحيح البخاري', ref:'2227', topic:'الحقوق والعدل'
+  },
+  {
+    num:14, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'إِنَّ اللَّهَ تَعَالَى يَقُولُ يَوْمَ الْقِيَامَةِ: يَا ابْنَ آدَمَ، مَرِضْتُ فَلَمْ تَعُدْنِي. قَالَ: يَا رَبِّ، كَيْفَ أَعُودُكَ وَأَنْتَ رَبُّ الْعَالَمِينَ؟ قَالَ: أَمَا عَلِمْتَ أَنَّ عَبْدِي فُلاَنًا مَرِضَ فَلَمْ تَعُدْهُ؟ أَمَا عَلِمْتَ أَنَّكَ لَوْ عُدْتَهُ لَوَجَدْتَنِي عِنْدَهُ؟',
+    source:'صحيح مسلم', ref:'2569', topic:'حقوق المسلم وعيادة المريض'
+  },
+  {
+    num:15, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا مَعَ عَبْدِي حِينَ يَذْكُرُنِي وَتَحَرَّكَتْ بِي شَفَتَاهُ.',
+    source:'صحيح البخاري', ref:'7405', topic:'فضل ذكر الله'
+  },
+  {
+    num:16, grade:'sahih',
+    narrator:'أبو موسى الأشعري رضي الله عنه',
+    text:'إِنَّ اللَّهَ عَزَّ وَجَلَّ يَبْسُطُ يَدَهُ بِاللَّيْلِ لِيَتُوبَ مُسِيءُ النَّهَارِ، وَيَبْسُطُ يَدَهُ بِالنَّهَارِ لِيَتُوبَ مُسِيءُ اللَّيْلِ، حَتَّى تَطْلُعَ الشَّمْسُ مِنْ مَغْرِبِهَا.',
+    source:'صحيح مسلم', ref:'2759', topic:'التوبة وقبولها'
+  },
+  {
+    num:17, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: مَا لِعَبْدِي الْمُؤْمِنِ عِنْدِي جَزَاءٌ إِذَا قَبَضْتُ صَفِيَّهُ مِنْ أَهْلِ الدُّنْيَا ثُمَّ احْتَسَبَهُ إِلاَّ الْجَنَّةُ.',
+    source:'صحيح البخاري', ref:'6424', topic:'الصبر على المصيبة'
+  },
+  {
+    num:18, grade:'sahih',
+    narrator:'أنس بن مالك رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: يَا ابْنَ آدَمَ، لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ وَلاَ أُبَالِي.',
+    source:'سنن الترمذي', ref:'3540 — حسن', topic:'سعة المغفرة'
+  },
+  {
+    num:19, grade:'sahih',
+    narrator:'أنس بن مالك رضي الله عنه',
+    text:'يَا ابْنَ آدَمَ، إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ عَلَى مَا كَانَ فِيكَ وَلاَ أُبَالِي. يَا ابْنَ آدَمَ، لَوْ أَتَيْتَنِي بِقُرَابِ الأَرْضِ خَطَايَا ثُمَّ لَقِيتَنِي لاَ تُشْرِكُ بِي شَيْئًا لَأَتَيْتُكَ بِقُرَابِهَا مَغْفِرَةً.',
+    source:'سنن الترمذي', ref:'3540 — حسن', topic:'الدعاء والرجاء'
+  },
+  {
+    num:20, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَتَنَزَّلُ رَبُّنَا تَبَارَكَ وَتَعَالَى كُلَّ لَيْلَةٍ إِلَى السَّمَاءِ الدُّنْيَا حِينَ يَبْقَى ثُلُثُ اللَّيْلِ الآخِرُ، يَقُولُ: مَنْ يَدْعُونِي فَأَسْتَجِيبَ لَهُ؟ مَنْ يَسْأَلُنِي فَأُعْطِيَهُ؟ مَنْ يَسْتَغْفِرُنِي فَأَغْفِرَ لَهُ؟',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'النزول الإلهي وفضل قيام الليل'
+  },
+  {
+    num:21, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: إِذَا أَحَبَّ عَبْدِي لِقَائِي أَحْبَبْتُ لِقَاءَهُ، وَإِذَا كَرِهَ لِقَائِي كَرِهْتُ لِقَاءَهُ.',
+    source:'صحيح البخاري', ref:'6507', topic:'حب لقاء الله'
+  },
+  {
+    num:22, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: عَبْدِي، أَصَبْتُكَ بِوَجَعٍ فِي أَحَبِّ عُضْوَيْنِ إِلَيْكَ عَيْنَيْكَ فَصَبَرْتَ، فَإِنَّ ثَوَابَكَ الْجَنَّةُ.',
+    source:'صحيح البخاري', ref:'5653', topic:'الصبر على المرض'
+  },
+  {
+    num:23, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ عَزَّ وَجَلَّ: مَنْ ذَكَرَنِي فِي نَفْسِهِ ذَكَرْتُهُ فِي نَفْسِي، وَمَنْ ذَكَرَنِي فِي مَلَإٍ ذَكَرْتُهُ فِي مَلَإٍ خَيْرٍ مِنْ مَلَئِهِ.',
+    source:'صحيح البخاري', ref:'7405', topic:'مجالس الذكر'
+  },
+  {
+    num:24, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: إِنِّي لاَ أَقْبَلُ مِنْ عَمَلٍ مَا خَالَطَ فِيهِ غَيْرِي.',
+    source:'مسند البزار', ref:'صحيح', topic:'الإخلاص لله'
+  },
+  {
+    num:25, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'إِنَّ اللَّهَ تَعَالَى لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ، وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ.',
+    source:'صحيح مسلم', ref:'2564', topic:'التقوى والنية'
+  },
+  {
+    num:26, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: مَا اجْتَمَعَ قَوْمٌ فِي بَيْتٍ مِنْ بُيُوتِ اللَّهِ يَتْلُونَ كِتَابَ اللَّهِ وَيَتَدَارَسُونَهُ بَيْنَهُمْ إِلاَّ نَزَلَتْ عَلَيْهِمُ السَّكِينَةُ، وَغَشِيَتْهُمُ الرَّحْمَةُ، وَحَفَّتْهُمُ الْمَلاَئِكَةُ، وَذَكَرَهُمُ اللَّهُ فِيمَنْ عِنْدَهُ.',
+    source:'صحيح مسلم', ref:'2699', topic:'فضل تلاوة القرآن وتعلمه'
+  },
+  {
+    num:27, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: خَلَقْتُ عِبَادِي حُنَفَاءَ كُلَّهُمْ، وَإِنَّهُمْ أَتَتْهُمُ الشَّيَاطِينُ فَاجْتَالَتْهُمْ عَنْ دِينِهِمْ.',
+    source:'صحيح مسلم', ref:'2865', topic:'الفطرة والدين'
+  },
+  {
+    num:28, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا أَغْنَى الشُّرَكَاءِ عَنِ الشِّرْكِ، مَنْ عَمِلَ عَمَلاً أَشْرَكَ فِيهِ مَعِي غَيْرِي تَرَكْتُهُ وَشِرْكَهُ.',
+    source:'صحيح مسلم', ref:'2985', topic:'الإخلاص وتجنب الرياء'
+  },
+  {
+    num:29, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَبَارَكَ وَتَعَالَى: يَا ابْنَ آدَمَ، تَفَرَّغْ لِعِبَادَتِي أَمْلأْ صَدْرَكَ غِنًى وَأَسُدَّ فَقْرَكَ، وَإِنْ لَمْ تَفْعَلْ مَلأْتُ صَدْرَكَ شُغْلاً وَلَمْ أَسُدَّ فَقْرَكَ.',
+    source:'سنن الترمذي وابن ماجه', ref:'حسن', topic:'الانشغال بالعبادة'
+  },
+  {
+    num:30, grade:'sahih',
+    narrator:'أبو ذر الغفاري رضي الله عنه',
+    text:'يَا عِبَادِي، لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ كَانُوا عَلَى أَتْقَى قَلْبِ رَجُلٍ وَاحِدٍ مِنْكُمْ، مَا زَادَ ذَلِكَ فِي مُلْكِي شَيْئًا. يَا عِبَادِي، لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ كَانُوا عَلَى أَفْجَرِ قَلْبِ رَجُلٍ وَاحِدٍ مَا نَقَصَ ذَلِكَ مِنْ مُلْكِي شَيْئًا.',
+    source:'صحيح مسلم', ref:'2577', topic:'عظمة الله وغناه'
+  },
+  {
+    num:31, grade:'sahih',
+    narrator:'أبو ذر الغفاري رضي الله عنه',
+    text:'يَا عِبَادِي، لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ قَامُوا فِي صَعِيدٍ وَاحِدٍ فَسَأَلُونِي فَأَعْطَيْتُ كُلَّ إِنْسَانٍ مَسْأَلَتَهُ، مَا نَقَصَ ذَلِكَ مِمَّا عِنْدِي إِلاَّ كَمَا يَنْقُصُ الْمِخْيَطُ إِذَا أُدْخِلَ الْبَحْرَ.',
+    source:'صحيح مسلم', ref:'2577', topic:'سعة عطاء الله'
+  },
+  {
+    num:32, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: إِذَا هَمَّ عَبْدِي أَنْ يَعْمَلَ حَسَنَةً فَعَمِلَهَا كَتَبْتُهَا لَهُ عَشْرًا إِلَى سَبْعِمِائَةِ ضِعْفٍ، إِلَى أَضْعَافٍ كَثِيرَةٍ.',
+    source:'صحيح مسلم', ref:'متفق عليه', topic:'تضعيف الحسنات'
+  },
+  {
+    num:33, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى حِينَ يَنْظُرُ إِلَى أَهْلِ الْجَنَّةِ: هَلْ تَشْتَهُونَ شَيْئًا فَأَزِيدَكُمْ؟ فَيَقُولُونَ: رَبَّنَا وَمَا فَوْقَ مَا أَعْطَيْتَنَا؟ فَيَقُولُ: رِضَائِي.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'رضا الله عن أهل الجنة'
+  },
+  {
+    num:34, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: عَبْدِي، اذْكُرْنِي فِي نَفْسِكَ أَذْكُرْكَ فِي نَفْسِي، وَاذْكُرْنِي فِي مَلَإٍ أَذْكُرْكَ فِي مَلَإٍ خَيْرٍ مِنْهُمْ.',
+    source:'مسند أحمد', ref:'صحيح', topic:'ذكر الله في السر والعلن'
+  },
+  {
+    num:35, grade:'hasan',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: أَنَا عِنْدَ ظَنِّ عَبْدِي بِي، فَلْيَظُنَّ بِي مَا شَاءَ.',
+    source:'مسند أحمد', ref:'حسن', topic:'حسن الظن بالله'
+  },
+  {
+    num:36, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: مَنْ آذَى لِي وَلِيًّا فَقَدْ بَارَزَنِي بِالْمُحَارَبَةِ.',
+    source:'صحيح البخاري', ref:'6502', topic:'حماية الله لأوليائه'
+  },
+  {
+    num:37, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: يَا ابْنَ آدَمَ، إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ، عَلَى مَا كَانَ مِنْكَ وَلاَ أُبَالِي، وَلَوْ لَقِيتَنِي بِقُرَابِ الأَرْضِ خَطِيئَةً لَقِيتُكَ بِقُرَابِهَا مَغْفِرَةً.',
+    source:'سنن الترمذي', ref:'3540 — حسن', topic:'المغفرة الإلهية'
+  },
+  {
+    num:38, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: مَا تَصَدَّقَ أَحَدٌ بِصَدَقَةٍ مِنْ كَسْبٍ طَيِّبٍ، وَلاَ يَقْبَلُ اللَّهُ إِلاَّ الطَّيِّبَ، إِلاَّ أَخَذَهَا الرَّحْمَنُ بِيَمِينِهِ فَرَبَّاهَا لِصَاحِبِهَا، حَتَّى تَكُونَ مِثْلَ الْجَبَلِ.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'فضل الصدقة'
+  },
+  {
+    num:39, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'قَالَ اللَّهُ تَعَالَى: أَعْدَدْتُ لِعِبَادِي الصَّالِحِينَ مَا لاَ عَيْنٌ رَأَتْ وَلاَ أُذُنٌ سَمِعَتْ، وَلاَ خَطَرَ عَلَى قَلْبِ بَشَرٍ، فَاقْرَؤُوا إِنْ شِئْتُمْ: فَلاَ تَعْلَمُ نَفْسٌ مَا أُخْفِيَ لَهُمْ مِنْ قُرَّةِ أَعْيُنٍ.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'نعيم الجنة المُعدّ للصالحين'
+  },
+  {
+    num:40, grade:'sahih',
+    narrator:'أبو هريرة رضي الله عنه',
+    text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا عِنْدَ ظَنِّ عَبْدِي بِي، وَأَنَا مَعَهُ حِينَ يَذْكُرُنِي، إِنْ ذَكَرَنِي فِي نَفْسِهِ ذَكَرْتُهُ فِي نَفْسِي، وَإِنْ ذَكَرَنِي فِي مَلَإٍ ذَكَرْتُهُ فِي مَلَإٍ خَيْرٍ مِنْ مَلَئِهِ، وَإِنْ اقْتَرَبَ مِنِّي شِبْرًا اقْتَرَبْتُ مِنْهُ ذِرَاعًا، وَإِنِ اقْتَرَبَ مِنِّي ذِرَاعًا اقْتَرَبْتُ مِنْهُ بَاعًا، وَإِنْ جَاءَنِي يَمْشِي جِئْتُهُ هَرْوَلَةً.',
+    source:'صحيح البخاري ومسلم', ref:'متفق عليه', topic:'قرب الله من العبد'
+  }
+];
+
+let fGrade = 'all', view = 'grid', openId = null;
+
+function setF(g, btn) {
+  fGrade = g;
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  render();
+}
+function setView(v) {
+  view = v;
+  document.getElementById('vgrid').classList.toggle('on', v==='grid');
+  document.getElementById('vlist').classList.toggle('on', v==='list');
+  render();
+}
+
+function render() {
+  const q = document.getElementById('srch').value.trim();
+  let data = ahadith.filter(h => {
+    const g = fGrade === 'all' || h.grade === fGrade;
+    const s = !q || h.text.includes(q) || h.narrator.includes(q) || h.topic.includes(q) || h.source.includes(q);
+    return g && s;
+  });
+  document.getElementById('cnt').textContent = data.length;
+  const c = document.getElementById('container');
+  if (!data.length) { c.innerHTML = '<div class="empty"><span class="empty-ar">لم يُوجَد</span>لا توجد نتائج</div>'; return; }
+  if (view === 'grid') renderGrid(data, c);
+  else renderList(data, c);
+}
+
+function gradeHtml(g) {
+  return g === 'sahih'
+    ? '<span class="grade-badge grade-sahih">✅ صحيح</span>'
+    : '<span class="grade-badge grade-hasan">🟡 حسن</span>';
+}
+
+function renderGrid(data, c) {
+  c.innerHTML = `<div class="cards-grid">${data.map(h => `
+    <div class="qcard" id="qc-${h.num}" onclick="toggleCard(${h.num})">
+      <span class="qcard-num">${h.num}</span>
+      <div class="qcard-top">
+        <div class="qcard-preview">${h.text}</div>
+        <div class="qcard-meta">
+          <span class="narrator">${h.narrator}</span>
+          ${gradeHtml(h.grade)}
+        </div>
+      </div>
+      <div class="qcard-body">
+        <div class="section-label">نص الحديث</div>
+        <div class="full-text">${h.text}</div>
+        <div class="section-label">المصدر والتخريج</div>
+        <div class="source-box">
+          <div class="source-row"><span class="key">الراوي</span><span class="val">${h.narrator}</span></div>
+          <div class="source-row"><span class="key">المصدر</span><span class="val ltr">${h.source}</span></div>
+          <div class="source-row"><span class="key">الرقم</span><span class="val ltr">${h.ref}</span></div>
+          <div class="source-row"><span class="key">الموضوع</span><span class="val">${h.topic}</span></div>
+        </div>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+function renderList(data, c) {
+  c.innerHTML = `<div class="list-view">${data.map(h => `
+    <div class="litem" onclick="openModal(${h.num})">
+      <div class="litem-num">${h.num}</div>
+      <div class="litem-text">${h.text}</div>
+      <div class="litem-meta">
+        ${gradeHtml(h.grade)}
+        <span class="source" style="font-size:.68rem;color:rgba(255,255,255,.3)">${h.source.split(' ')[0]}</span>
+      </div>
+    </div>`).join('')}</div>`;
+}
+
+function toggleCard(num) {
+  const el = document.getElementById('qc-' + num);
+  if (!el) return;
+  const isOpen = el.classList.contains('open');
+  if (openId) document.getElementById('qc-' + openId)?.classList.remove('open');
+  el.classList.toggle('open', !isOpen);
+  openId = isOpen ? null : num;
+}
+
+function openModal(num) {
+  const h = ahadith.find(x => x.num === num);
+  if (!h) return;
+  document.getElementById('mNum').innerHTML = `${h.num}<small>${h.topic}</small>`;
+  document.getElementById('mText').textContent = h.text;
+  document.getElementById('mMeta').innerHTML = `
+    <div class="modal-row"><span class="mk">الراوي</span><span class="mv">${h.narrator}</span></div>
+    <div class="modal-row"><span class="mk">المصدر</span><span class="mv ltr">${h.source}</span></div>
+    <div class="modal-row"><span class="mk">الرقم</span><span class="mv ltr">${h.ref}</span></div>
+    <div class="modal-row"><span class="mk">الدرجة</span>${gradeHtml(h.grade)}</div>`;
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modal'))
+    document.getElementById('modal').classList.remove('open');
+}
+
+function printAll() {
+  document.querySelectorAll('.qcard').forEach(c => c.classList.add('open'));
+  window.print();
+  setTimeout(() => document.querySelectorAll('.qcard').forEach(c => c.classList.remove('open')), 1000);
+}
+
+render();
+</script>
+</body>
+</html>
