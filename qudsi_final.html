@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأحاديث القدسية — أثر</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#FAF6EF; --cream2:#F2EBD9; --cream3:#E8DCC8;
+  --gold:#C49A3C; --gold-light:#E8C97A; --gold-dark:#8B6914;
+  --ink:#2C2416; --ink2:#5A4E3A; --ink3:#8C7D65;
+  --green:#1C3D2A; --green2:#2E6642;
+  --border:rgba(196,154,60,0.22); --border2:rgba(196,154,60,0.4);
+  --white:#FFFDF8; --shadow:0 4px 20px rgba(44,36,22,0.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
+
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23C4A04A' stroke-width='0.35' opacity='0.18'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z'/%3E%3Cpath d='M40 12L68 40L40 68L12 40Z'/%3E%3Cpath d='M40 24L56 40L40 56L24 40Z'/%3E%3Ccircle cx='40' cy='40' r='7'/%3E%3Ccircle cx='0' cy='0' r='7'/%3E%3Ccircle cx='80' cy='0' r='7'/%3E%3Ccircle cx='0' cy='80' r='7'/%3E%3Ccircle cx='80' cy='80' r='7'/%3E%3C/g%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1;}
+
+/* HEADER */
+header{
+  background:var(--green);height:64px;padding:0 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:300;
+  box-shadow:0 2px 12px rgba(28,61,42,0.25);
+}
+.logo{font-family:'Amiri',serif;font-size:2rem;color:var(--gold-light);}
+.logo span{font-family:'Cairo',sans-serif;font-size:.8rem;color:rgba(255,255,255,.45);font-weight:300;margin-right:10px;}
+.hright{display:flex;gap:8px;align-items:center;}
+.print-btn{background:var(--gold);color:var(--green);border:none;border-radius:18px;padding:6px 16px;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;}
+.print-btn:hover{background:var(--gold-light);}
+.back-btn{color:var(--gold-light);font-size:.8rem;border:1px solid rgba(232,201,122,.3);padding:5px 14px;border-radius:18px;cursor:pointer;}
+
+/* HERO */
+.hero{
+  background:var(--green);padding:2.5rem 2rem 3rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(196,154,60,.15) 0%,transparent 65%);pointer-events:none;}
+.hero-eyebrow{font-size:.7rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:32px;height:1px;background:var(--gold);}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(2rem,6vw,3.5rem);color:var(--gold-light);margin-bottom:.3rem;}
+.hero-sub{color:rgba(255,255,255,.5);font-size:.88rem;font-weight:300;margin-bottom:1.6rem;}
+.hero-def{max-width:580px;margin:0 auto 1.6rem;background:rgba(196,154,60,.07);border:1px solid rgba(196,154,60,.2);border-radius:12px;padding:1rem 1.4rem;}
+.hero-def p{font-family:'Amiri',serif;font-size:.98rem;color:rgba(255,255,255,.82);line-height:1.9;}
+.hero-def cite{font-size:.72rem;color:var(--gold);display:block;margin-top:4px;}
+.hero-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}
+.sn{font-family:'Amiri',serif;font-size:1.7rem;color:var(--gold-light);display:block;}
+.sl{font-size:.72rem;color:rgba(255,255,255,.4);}
+
+/* LAYOUT */
+.page-body{display:flex;max-width:1300px;margin:0 auto;padding:1.5rem;gap:1.2rem;align-items:flex-start;}
+
+/* SIDEBAR */
+.sidebar{
+  width:220px;flex-shrink:0;
+  background:var(--white);border:1px solid var(--border);border-radius:14px;
+  position:sticky;top:80px;max-height:calc(100vh - 100px);overflow-y:auto;
+  box-shadow:var(--shadow);
+}
+.sidebar::-webkit-scrollbar{width:4px;}
+.sidebar::-webkit-scrollbar-track{background:transparent;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px;}
+.sidebar-head{
+  padding:.9rem 1rem;font-size:.72rem;font-weight:700;color:var(--gold-dark);
+  letter-spacing:1px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:6px;background:var(--cream2);border-radius:14px 14px 0 0;
+  position:sticky;top:0;z-index:2;
+}
+.topic-btn{
+  display:block;width:100%;text-align:right;padding:.65rem 1rem;
+  font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--ink2);
+  background:none;border:none;border-bottom:1px solid var(--border);
+  cursor:pointer;transition:all .18s;line-height:1.35;
+}
+.topic-btn:last-child{border-bottom:none;}
+.topic-btn:hover{background:var(--cream2);color:var(--gold-dark);}
+.topic-btn.active{background:rgba(196,154,60,.1);color:var(--gold-dark);font-weight:700;border-right:3px solid var(--gold);}
+.topic-count{float:left;font-size:.65rem;background:var(--cream3);border-radius:8px;padding:1px 7px;color:var(--ink3);margin-top:1px;}
+
+/* MAIN CONTENT */
+.content{flex:1;min-width:0;}
+
+/* TOOLBAR */
+.toolbar{
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  padding:.8rem 1rem;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;
+  margin-bottom:1rem;box-shadow:var(--shadow);
+}
+.search-w{flex:1;min-width:160px;position:relative;}
+.search-w input{
+  width:100%;background:var(--cream);border:1px solid var(--border);
+  border-radius:8px;padding:8px 12px 8px 34px;
+  font-family:'Cairo',sans-serif;font-size:.85rem;color:var(--ink);outline:none;
+}
+.search-w input:focus{border-color:var(--gold);}
+.search-w input::placeholder{color:var(--ink3);}
+.si{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--ink3);}
+.fb{padding:5px 12px;border-radius:14px;font-family:'Cairo',sans-serif;font-size:.74rem;cursor:pointer;border:1px solid var(--border);background:var(--cream);color:var(--ink2);transition:all .18s;white-space:nowrap;}
+.fb:hover{border-color:var(--gold);}
+.fb.on{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:700;}
+.count-p{font-size:.74rem;color:var(--ink3);margin-right:auto;white-space:nowrap;}
+.count-p strong{color:var(--gold-dark);}
+
+/* CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:.9rem;}
+
+.qcard{
+  background:var(--white);border:1px solid var(--border);border-radius:14px;
+  padding:1.3rem;cursor:pointer;transition:all .22s;
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.qcard::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:transparent;transition:background .2s;}
+.qcard:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 28px rgba(44,36,22,.1);}
+.qcard:hover::before,.qcard.hl::before{background:var(--gold);}
+.qcard.hl{border-color:var(--gold);background:rgba(196,154,60,.03);}
+.qcard-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;}
+.qnum{font-family:'Amiri',serif;font-size:1.6rem;color:var(--gold);line-height:1;}
+.qcard-badges{display:flex;gap:5px;align-items:center;}
+.grade-s{font-size:.65rem;padding:2px 8px;border-radius:6px;background:rgba(46,100,66,.12);color:#1C6642;border:1px solid rgba(46,100,66,.2);font-weight:700;}
+.grade-h{font-size:.65rem;padding:2px 8px;border-radius:6px;background:rgba(196,154,60,.1);color:var(--gold-dark);border:1px solid var(--border);font-weight:700;}
+.qtext{
+  font-family:'Amiri',serif;font-size:1rem;color:var(--ink);line-height:1.9;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  margin-bottom:.7rem;
+}
+.qmeta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.narrator-tag{font-size:.7rem;color:var(--gold-dark);background:rgba(196,154,60,.08);border:1px solid var(--border);border-radius:8px;padding:2px 9px;}
+.topic-tag{font-size:.68rem;color:var(--ink3);}
+.qcard-open-hint{font-size:.68rem;color:var(--gold);margin-top:.5rem;text-align:center;opacity:.7;}
+
+/* MODAL */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:500;
+  background:rgba(28,61,42,0.7);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:1rem;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:var(--white);border:1px solid var(--border2);border-radius:20px;
+  max-width:660px;width:100%;max-height:88vh;overflow-y:auto;
+  box-shadow:0 20px 60px rgba(28,61,42,.25);position:relative;
+}
+.modal::-webkit-scrollbar{width:4px;}
+.modal::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px;}
+.modal-close{
+  position:absolute;top:12px;left:12px;background:var(--cream2);border:none;
+  border-radius:50%;width:30px;height:30px;cursor:pointer;
+  color:var(--ink3);font-size:14px;display:flex;align-items:center;justify-content:center;
+}
+.modal-close:hover{background:var(--cream3);color:var(--gold-dark);}
+/* Modal header */
+.modal-top{background:var(--green);padding:1.8rem 2rem 1.4rem;border-radius:20px 20px 0 0;text-align:center;}
+.modal-num-big{font-family:'Amiri',serif;font-size:3rem;color:var(--gold-light);line-height:1;}
+.modal-topic{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:4px;}
+/* Hadith text */
+.modal-hadith{
+  font-family:'Amiri',serif;font-size:1.1rem;color:var(--ink);line-height:2.1;
+  padding:1.4rem 2rem;text-align:justify;
+  border-bottom:1px solid var(--border);
+}
+/* Meta */
+.modal-meta{padding:.9rem 2rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;border-bottom:1px solid var(--border);}
+.modal-row{display:flex;gap:.5rem;font-size:.78rem;align-items:center;}
+.mk{color:var(--ink3);}
+.mv{color:var(--ink2);}
+.mv.ltr{direction:ltr;text-align:left;}
+
+/* SCHOLAR TABS */
+.scholar-tabs-wrap{padding:.9rem 2rem .5rem;}
+.scholar-tabs-label{font-size:.68rem;font-weight:700;color:var(--gold-dark);letter-spacing:1px;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.scholar-tabs-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.stabs{display:flex;gap:6px;flex-wrap:wrap;}
+.stab{
+  padding:7px 14px;border-radius:18px;font-family:'Cairo',sans-serif;font-size:.78rem;
+  cursor:pointer;border:1px solid var(--border);
+  background:var(--cream);color:var(--ink2);transition:all .2s;
+  display:flex;align-items:center;gap:6px;
+}
+.stab:hover{border-color:var(--gold);}
+.stab.active{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:700;}
+.stab .av{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;}
+.stab-sha .av{background:rgba(139,99,20,.15);color:var(--gold-dark);}
+.stab.active .av{background:rgba(255,255,255,.25);color:#fff;}
+
+/* SHARH BOX */
+.sharh-wrap{padding:.5rem 2rem 1.8rem;}
+.sharh-box{border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.sharh-head{
+  padding:.65rem 1rem;font-size:.76rem;font-weight:700;
+  display:flex;align-items:center;gap:8px;
+}
+.sh-sha{background:rgba(196,154,60,.12);color:var(--gold-dark);}
+.sh-uth{background:rgba(28,61,42,.1);color:var(--green2);}
+.sh-amr{background:rgba(30,90,180,.08);color:#1E5AB4;}
+.sharh-text{
+  font-family:'Amiri',serif;font-size:1rem;color:var(--ink);line-height:2;
+  padding:1rem 1.1rem;background:var(--white);
+}
+.sharh-loading{display:flex;align-items:center;gap:10px;padding:1.2rem;color:var(--ink3);font-size:.82rem;}
+.spin{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--gold);animation:sp .8s linear infinite;flex-shrink:0;}
+@keyframes sp{to{transform:rotate(360deg)}}
+.sharh-err{padding:1rem;color:#c0392b;font-size:.82rem;}
+
+/* PRINT */
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  header,.toolbar,.sidebar,.modal-overlay,.print-btn,.back-btn{display:none!important;}
+  body{background:white;}
+  .hero{background:var(--green)!important;padding:1.2rem;}
+  .page-body{padding:.5rem;display:block;}
+  .cards-grid{grid-template-columns:repeat(2,1fr);gap:.5rem;}
+  .qcard{page-break-inside:avoid;}
+}
+@media(max-width:800px){
+  .page-body{flex-direction:column;}
+  .sidebar{width:100%;position:static;max-height:none;overflow-x:auto;overflow-y:visible;display:flex;flex-wrap:wrap;gap:4px;padding:.6rem;}
+  .sidebar-head{display:none;}
+  .topic-btn{width:auto;display:inline-block;padding:.4rem .8rem;border:1px solid var(--border);border-bottom:none;border-radius:10px;font-size:.72rem;}
+  .topic-btn.active{border-radius:10px;border-right:none;border-top:2px solid var(--gold);}
+  .topic-count{display:none;}
+  .cards-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo">أثر <span>/ الأحاديث القدسية</span></div>
+  <div class="hright">
+    <button class="print-btn" onclick="printAll()">🖨️ طباعة</button>
+    <div class="back-btn">← العودة</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">كلام الله على لسان نبيّه ﷺ</div>
+  <h1>الأحاديث القدسية</h1>
+  <p class="hero-sub">الأربعون القدسية — مرويّة بأسانيد صحيحة وحسنة</p>
+  <div class="hero-def">
+    <p>الحديث القدسي: ما يرويه النبي ﷺ عن ربه عز وجل — معناه من الله ولفظه من النبي ﷺ، وهو دون القرآن درجةً في الإعجاز.</p>
+    <cite>— تعريف علماء الحديث</cite>
+  </div>
+  <div class="hero-stats">
+    <div><span class="sn">٤٠</span><span class="sl">حديثًا قدسيًا</span></div>
+    <div><span class="sn">٩</span><span class="sl">مصادر حديثية</span></div>
+    <div><span class="sn">٣</span><span class="sl">شروح لمشايخ</span></div>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- SIDEBAR: Topics -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-head">📚 تصفية بالموضوع</div>
+    <button class="topic-btn active" onclick="filterTopic('all',this)">
+      جميع الأحاديث <span class="topic-count">٤٠</span>
+    </button>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="content">
+    <div class="toolbar">
+      <div class="search-w"><span class="si">🔍</span><input type="text" id="srch" placeholder="ابحث في النص أو الراوي..." oninput="applyFilters()"></div>
+      <button class="fb on" onclick="setGrade('all',this)">الكل</button>
+      <button class="fb" onclick="setGrade('sahih',this)">✅ صحيح</button>
+      <button class="fb" onclick="setGrade('hasan',this)">🟡 حسن</button>
+      <div class="count-p">يُعرض <strong id="cnt">40</strong> حديثًا</div>
+    </div>
+    <div class="cards-grid" id="grid"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="overlay" onclick="maybeClose(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-top">
+      <div class="modal-num-big" id="mnum">١</div>
+      <div class="modal-topic" id="mtopic"></div>
+    </div>
+    <div class="modal-hadith" id="mhadith"></div>
+    <div class="modal-meta" id="mmeta"></div>
+    <div class="scholar-tabs-wrap">
+      <div class="scholar-tabs-label">شرح المشايخ</div>
+      <div class="stabs">
+        <div class="stab stab-sha" id="tab-sha" onclick="loadSharh('sha')">
+          <span class="av">ش</span> الشعراوي
+        </div>
+        <div class="stab stab-sha" id="tab-uth" onclick="loadSharh('uth')">
+          <span class="av">ع</span> ابن عثيمين
+        </div>
+        <div class="stab stab-sha" id="tab-amr" onclick="loadSharh('amr')">
+          <span class="av">خ</span> عمرو خالد
+        </div>
+      </div>
+    </div>
+    <div class="sharh-wrap" id="sharhWrap"></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const ahadith = [
+  {num:1,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا عِنْدَ ظَنِّ عَبْدِي بِي، وَأَنَا مَعَهُ إِذَا ذَكَرَنِي؛ فَإِنْ ذَكَرَنِي فِي نَفْسِهِ ذَكَرْتُهُ فِي نَفْسِي، وَإِنْ ذَكَرَنِي فِي مَلَإٍ ذَكَرْتُهُ فِي مَلَإٍ خَيْرٍ مِنْهُمْ، وَإِنْ تَقَرَّبَ إِلَيَّ شِبْرًا تَقَرَّبْتُ إِلَيْهِ ذِرَاعًا، وَإِنْ تَقَرَّبَ إِلَيَّ ذِرَاعًا تَقَرَّبْتُ إِلَيْهِ بَاعًا، وَإِنْ أَتَانِي يَمْشِي أَتَيْتُهُ هَرْوَلَةً.',source:'صحيح البخاري',ref:'7405',topic:'الذكر والقرب من الله'},
+  {num:2,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَبَارَكَ وَتَعَالَى: يَا ابْنَ آدَمَ، أَنْفِقْ أُنْفِقْ عَلَيْكَ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'الإنفاق في سبيل الله'},
+  {num:3,grade:'sahih',narrator:'أبو ذر الغفاري رضي الله عنه',text:'يَا عِبَادِي، إِنِّي حَرَّمْتُ الظُّلْمَ عَلَى نَفْسِي وَجَعَلْتُهُ بَيْنَكُمْ مُحَرَّمًا، فَلاَ تَظَالَمُوا. يَا عِبَادِي، كُلُّكُمْ ضَالٌّ إِلاَّ مَنْ هَدَيْتُهُ، فَاسْتَهْدُونِي أَهْدِكُمْ. يَا عِبَادِي، كُلُّكُمْ جَائِعٌ إِلاَّ مَنْ أَطْعَمْتُهُ فَاسْتَطْعِمُونِي أُطْعِمْكُمْ. يَا عِبَادِي إِنَّكُمْ تُخْطِئُونَ بِاللَّيْلِ وَالنَّهَارِ، وَأَنَا أَغْفِرُ الذُّنُوبَ جَمِيعًا فَاسْتَغْفِرُونِي أَغْفِرْ لَكُمْ.',source:'صحيح مسلم',ref:'2577',topic:'العدل والهداية والمغفرة'},
+  {num:4,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: مَنْ عَادَى لِي وَلِيًّا فَقَدْ آذَنْتُهُ بِالْحَرْبِ، وَمَا تَقَرَّبَ إِلَيَّ عَبْدِي بِشَيْءٍ أَحَبَّ إِلَيَّ مِمَّا افْتَرَضْتُهُ عَلَيْهِ، وَمَا يَزَالُ عَبْدِي يَتَقَرَّبُ إِلَيَّ بِالنَّوَافِلِ حَتَّى أُحِبَّهُ، فَإِذَا أَحْبَبْتُهُ كُنْتُ سَمْعَهُ الَّذِي يَسْمَعُ بِهِ وَبَصَرَهُ الَّذِي يُبْصِرُ بِهِ وَيَدَهُ الَّتِي يَبْطِشُ بِهَا وَرِجْلَهُ الَّتِي يَمْشِي بِهَا.',source:'صحيح البخاري',ref:'6502',topic:'محبة الله للأولياء'},
+  {num:5,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: الصَّوْمُ لِي وَأَنَا أَجْزِي بِهِ؛ يَدَعُ شَهْوَتَهُ وَأَكْلَهُ وَشُرْبَهُ مِنْ أَجْلِي. وَالصِّيَامُ جُنَّةٌ، وَلِلصَّائِمِ فَرْحَتَانِ: فَرْحَةٌ حِينَ يُفْطِرُ وَفَرْحَةٌ حِينَ يَلْقَى رَبَّهُ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'فضل الصيام'},
+  {num:6,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: أَعْدَدْتُ لِعِبَادِي الصَّالِحِينَ مَا لاَ عَيْنٌ رَأَتْ وَلاَ أُذُنٌ سَمِعَتْ وَلاَ خَطَرَ عَلَى قَلْبِ بَشَرٍ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'نعيم الجنة'},
+  {num:7,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'لَمَّا قَضَى اللَّهُ الْخَلْقَ كَتَبَ فِي كِتَابِهِ فَهُوَ عِنْدَهُ فَوْقَ الْعَرْشِ: إِنَّ رَحْمَتِي غَلَبَتْ غَضَبِي.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'سعة رحمة الله'},
+  {num:8,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: إِذَا هَمَّ عَبْدِي بِسَيِّئَةٍ فَلاَ تَكْتُبُوهَا عَلَيْهِ، فَإِنْ عَمِلَهَا فَاكْتُبُوهَا سَيِّئَةً. وَإِذَا هَمَّ بِحَسَنَةٍ فَلَمْ يَعْمَلْهَا فَاكْتُبُوهَا حَسَنَةً، فَإِنْ عَمِلَهَا فَاكْتُبُوهَا عَشْرًا.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'تضعيف الحسنات'},
+  {num:9,grade:'sahih',narrator:'معاذ بن جبل رضي الله عنه',text:'قَالَ اللَّهُ تَبَارَكَ وَتَعَالَى: الْمُتَحَابُّونَ فِي جَلاَلِي لَهُمْ مَنَابِرُ مِنْ نُورٍ يَغْبِطُهُمُ النَّبِيُّونَ وَالشُّهَدَاءُ.',source:'سنن الترمذي',ref:'2390',topic:'المحبة في الله'},
+  {num:10,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: يُؤْذِينِي ابْنُ آدَمَ، يَسُبُّ الدَّهْرَ وَأَنَا الدَّهْرُ، بِيَدِي الأَمْرُ أُقَلِّبُ اللَّيْلَ وَالنَّهَارَ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'النهي عن سب الدهر'},
+  {num:11,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَسَمْتُ الصَّلاَةَ بَيْنِي وَبَيْنَ عَبْدِي نِصْفَيْنِ وَلِعَبْدِي مَا سَأَلَ. فَإِذَا قَالَ: الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ، قَالَ اللَّهُ: حَمِدَنِي عَبْدِي. وَإِذَا قَالَ: الرَّحْمَنِ الرَّحِيمِ، قَالَ: أَثْنَى عَلَيَّ عَبْدِي. وَإِذَا قَالَ: إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ، قَالَ: هَذَا بَيْنِي وَبَيْنَ عَبْدِي.',source:'صحيح مسلم',ref:'395',topic:'فضل الفاتحة'},
+  {num:12,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: الْكِبْرِيَاءُ رِدَائِي وَالْعَظَمَةُ إِزَارِي فَمَنْ نَازَعَنِي وَاحِدًا مِنْهُمَا قَذَفْتُهُ فِي النَّارِ.',source:'سنن أبي داود',ref:'صحيح',topic:'النهي عن الكبر'},
+  {num:13,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: ثَلاَثَةٌ أَنَا خَصْمُهُمْ يَوْمَ الْقِيَامَةِ: رَجُلٌ أَعْطَى بِي ثُمَّ غَدَرَ، وَرَجُلٌ بَاعَ حُرًّا فَأَكَلَ ثَمَنَهُ، وَرَجُلٌ اسْتَأْجَرَ أَجِيرًا فَاسْتَوْفَى مِنْهُ وَلَمْ يُعْطِهِ أَجْرَهُ.',source:'صحيح البخاري',ref:'2227',topic:'الحقوق والعدل'},
+  {num:14,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'إِنَّ اللَّهَ تَعَالَى يَقُولُ يَوْمَ الْقِيَامَةِ: يَا ابْنَ آدَمَ، مَرِضْتُ فَلَمْ تَعُدْنِي. قَالَ: رَبِّ كَيْفَ أَعُودُكَ وَأَنْتَ رَبُّ الْعَالَمِينَ؟ قَالَ: أَمَا عَلِمْتَ أَنَّ عَبْدِي فُلاَنًا مَرِضَ فَلَمْ تَعُدْهُ؟ أَمَا عَلِمْتَ أَنَّكَ لَوْ عُدْتَهُ لَوَجَدْتَنِي عِنْدَهُ؟',source:'صحيح مسلم',ref:'2569',topic:'حقوق المسلم وعيادة المريض'},
+  {num:15,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا مَعَ عَبْدِي حِينَ يَذْكُرُنِي وَتَحَرَّكَتْ بِي شَفَتَاهُ.',source:'صحيح البخاري',ref:'7405',topic:'الذكر والقرب من الله'},
+  {num:16,grade:'sahih',narrator:'أبو موسى الأشعري رضي الله عنه',text:'إِنَّ اللَّهَ عَزَّ وَجَلَّ يَبْسُطُ يَدَهُ بِاللَّيْلِ لِيَتُوبَ مُسِيءُ النَّهَارِ وَيَبْسُطُ يَدَهُ بِالنَّهَارِ لِيَتُوبَ مُسِيءُ اللَّيْلِ حَتَّى تَطْلُعَ الشَّمْسُ مِنْ مَغْرِبِهَا.',source:'صحيح مسلم',ref:'2759',topic:'التوبة وقبولها'},
+  {num:17,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: مَا لِعَبْدِي الْمُؤْمِنِ عِنْدِي جَزَاءٌ إِذَا قَبَضْتُ صَفِيَّهُ مِنْ أَهْلِ الدُّنْيَا ثُمَّ احْتَسَبَهُ إِلاَّ الْجَنَّةُ.',source:'صحيح البخاري',ref:'6424',topic:'الصبر على المصيبة'},
+  {num:18,grade:'hasan',narrator:'أنس بن مالك رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: يَا ابْنَ آدَمَ، لَوْ بَلَغَتْ ذُنُوبُكَ عَنَانَ السَّمَاءِ ثُمَّ اسْتَغْفَرْتَنِي غَفَرْتُ لَكَ وَلاَ أُبَالِي.',source:'سنن الترمذي',ref:'3540',topic:'سعة المغفرة'},
+  {num:19,grade:'hasan',narrator:'أنس بن مالك رضي الله عنه',text:'يَا ابْنَ آدَمَ، إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ عَلَى مَا كَانَ فِيكَ وَلاَ أُبَالِي. يَا ابْنَ آدَمَ، لَوْ أَتَيْتَنِي بِقُرَابِ الأَرْضِ خَطَايَا ثُمَّ لَقِيتَنِي لاَ تُشْرِكُ بِي شَيْئًا لَأَتَيْتُكَ بِقُرَابِهَا مَغْفِرَةً.',source:'سنن الترمذي',ref:'3540',topic:'الدعاء والرجاء'},
+  {num:20,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَتَنَزَّلُ رَبُّنَا تَبَارَكَ وَتَعَالَى كُلَّ لَيْلَةٍ إِلَى السَّمَاءِ الدُّنْيَا حِينَ يَبْقَى ثُلُثُ اللَّيْلِ الآخِرُ يَقُولُ: مَنْ يَدْعُونِي فَأَسْتَجِيبَ لَهُ؟ مَنْ يَسْأَلُنِي فَأُعْطِيَهُ؟ مَنْ يَسْتَغْفِرُنِي فَأَغْفِرَ لَهُ؟',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'فضل قيام الليل'},
+  {num:21,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: إِذَا أَحَبَّ عَبْدِي لِقَائِي أَحْبَبْتُ لِقَاءَهُ وَإِذَا كَرِهَ لِقَائِي كَرِهْتُ لِقَاءَهُ.',source:'صحيح البخاري',ref:'6507',topic:'حب لقاء الله'},
+  {num:22,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: يُؤْذِينِي ابْنُ آدَمَ، يَسُبُّ الدَّهْرَ وَأَنَا الدَّهْرُ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'النهي عن سب الدهر'},
+  {num:23,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: مَنْ ذَكَرَنِي فِي نَفْسِهِ ذَكَرْتُهُ فِي نَفْسِي وَمَنْ ذَكَرَنِي فِي مَلَإٍ ذَكَرْتُهُ فِي مَلَإٍ خَيْرٍ مِنْ مَلَئِهِ.',source:'صحيح البخاري',ref:'7405',topic:'الذكر والقرب من الله'},
+  {num:24,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ عَزَّ وَجَلَّ: إِنِّي لاَ أَقْبَلُ مِنْ عَمَلٍ مَا خَالَطَ فِيهِ غَيْرِي.',source:'مسند البزار',ref:'صحيح',topic:'الإخلاص لله'},
+  {num:25,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'إِنَّ اللَّهَ تَعَالَى لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ.',source:'صحيح مسلم',ref:'2564',topic:'التقوى والنية'},
+  {num:26,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'مَا اجْتَمَعَ قَوْمٌ فِي بَيْتٍ مِنْ بُيُوتِ اللَّهِ يَتْلُونَ كِتَابَ اللَّهِ وَيَتَدَارَسُونَهُ بَيْنَهُمْ إِلاَّ نَزَلَتْ عَلَيْهِمُ السَّكِينَةُ وَغَشِيَتْهُمُ الرَّحْمَةُ وَحَفَّتْهُمُ الْمَلاَئِكَةُ.',source:'صحيح مسلم',ref:'2699',topic:'فضل تلاوة القرآن'},
+  {num:27,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: خَلَقْتُ عِبَادِي حُنَفَاءَ كُلَّهُمْ وَإِنَّهُمْ أَتَتْهُمُ الشَّيَاطِينُ فَاجْتَالَتْهُمْ عَنْ دِينِهِمْ.',source:'صحيح مسلم',ref:'2865',topic:'الفطرة والدين'},
+  {num:28,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا أَغْنَى الشُّرَكَاءِ عَنِ الشِّرْكِ، مَنْ عَمِلَ عَمَلاً أَشْرَكَ فِيهِ مَعِي غَيْرِي تَرَكْتُهُ وَشِرْكَهُ.',source:'صحيح مسلم',ref:'2985',topic:'الإخلاص لله'},
+  {num:29,grade:'hasan',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَبَارَكَ وَتَعَالَى: يَا ابْنَ آدَمَ، تَفَرَّغْ لِعِبَادَتِي أَمْلأْ صَدْرَكَ غِنًى وَأَسُدَّ فَقْرَكَ.',source:'سنن الترمذي',ref:'حسن',topic:'الانشغال بالعبادة'},
+  {num:30,grade:'sahih',narrator:'أبو ذر الغفاري رضي الله عنه',text:'يَا عِبَادِي، لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ كَانُوا عَلَى أَتْقَى قَلْبِ رَجُلٍ وَاحِدٍ مِنْكُمْ مَا زَادَ ذَلِكَ فِي مُلْكِي شَيْئًا.',source:'صحيح مسلم',ref:'2577',topic:'عظمة الله وغناه'},
+  {num:31,grade:'sahih',narrator:'أبو ذر الغفاري رضي الله عنه',text:'يَا عِبَادِي، لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ قَامُوا فِي صَعِيدٍ وَاحِدٍ فَسَأَلُونِي فَأَعْطَيْتُ كُلَّ إِنْسَانٍ مَسْأَلَتَهُ مَا نَقَصَ ذَلِكَ مِمَّا عِنْدِي إِلاَّ كَمَا يَنْقُصُ الْمِخْيَطُ إِذَا أُدْخِلَ الْبَحْرَ.',source:'صحيح مسلم',ref:'2577',topic:'سعة عطاء الله'},
+  {num:32,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: إِذَا هَمَّ عَبْدِي أَنْ يَعْمَلَ حَسَنَةً فَعَمِلَهَا كَتَبْتُهَا لَهُ عَشْرًا إِلَى سَبْعِمِائَةِ ضِعْفٍ إِلَى أَضْعَافٍ كَثِيرَةٍ.',source:'صحيح مسلم',ref:'متفق عليه',topic:'تضعيف الحسنات'},
+  {num:33,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى حِينَ يَنْظُرُ إِلَى أَهْلِ الْجَنَّةِ: هَلْ تَشْتَهُونَ شَيْئًا فَأَزِيدَكُمْ؟ فَيَقُولُونَ: رَبَّنَا وَمَا فَوْقَ مَا أَعْطَيْتَنَا؟ فَيَقُولُ: رِضَائِي.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'نعيم الجنة'},
+  {num:34,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ عَزَّ وَجَلَّ: مَنْ جَاءَ بِالْحَسَنَةِ فَلَهُ عَشْرُ أَمْثَالِهَا وَأَزِيدُ، وَمَنْ جَاءَ بِالسَّيِّئَةِ فَجَزَاؤُهُ سَيِّئَةٌ مِثْلُهَا أَوْ أَغْفِرُ.',source:'صحيح مسلم',ref:'صحيح',topic:'تضعيف الحسنات'},
+  {num:35,grade:'hasan',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: أَنَا عِنْدَ ظَنِّ عَبْدِي بِي فَلْيَظُنَّ بِي مَا شَاءَ.',source:'مسند أحمد',ref:'حسن',topic:'الذكر والقرب من الله'},
+  {num:36,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: مَا تَصَدَّقَ أَحَدٌ بِصَدَقَةٍ مِنْ كَسْبٍ طَيِّبٍ إِلاَّ أَخَذَهَا الرَّحْمَنُ بِيَمِينِهِ فَرَبَّاهَا لِصَاحِبِهَا حَتَّى تَكُونَ مِثْلَ الْجَبَلِ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'الإنفاق في سبيل الله'},
+  {num:37,grade:'sahih',narrator:'أبو موسى الأشعري رضي الله عنه',text:'يَا عِبَادِي، إِنَّمَا هِيَ أَعْمَالُكُمْ أُحْصِيهَا لَكُمْ ثُمَّ أُوَفِّيكُمْ إِيَّاهَا، فَمَنْ وَجَدَ خَيْرًا فَلْيَحْمَدِ اللَّهَ، وَمَنْ وَجَدَ غَيْرَ ذَلِكَ فَلاَ يَلُومَنَّ إِلاَّ نَفْسَهُ.',source:'صحيح مسلم',ref:'2577',topic:'المسؤولية والحساب'},
+  {num:38,grade:'hasan',narrator:'أنس بن مالك رضي الله عنه',text:'يَا ابْنَ آدَمَ، إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ عَلَى مَا كَانَ مِنْكَ وَلاَ أُبَالِي.',source:'سنن الترمذي',ref:'3540',topic:'سعة المغفرة'},
+  {num:39,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'قَالَ اللَّهُ تَعَالَى: أَعْدَدْتُ لِعِبَادِي الصَّالِحِينَ مَا لاَ عَيْنٌ رَأَتْ وَلاَ أُذُنٌ سَمِعَتْ وَلاَ خَطَرَ عَلَى قَلْبِ بَشَرٍ، فَاقْرَؤُوا إِنْ شِئْتُمْ: فَلاَ تَعْلَمُ نَفْسٌ مَا أُخْفِيَ لَهُمْ مِنْ قُرَّةِ أَعْيُنٍ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'نعيم الجنة'},
+  {num:40,grade:'sahih',narrator:'أبو هريرة رضي الله عنه',text:'يَقُولُ اللَّهُ تَعَالَى: أَنَا عِنْدَ ظَنِّ عَبْدِي بِي، وَأَنَا مَعَهُ حِينَ يَذْكُرُنِي، إِنْ ذَكَرَنِي فِي نَفْسِهِ ذَكَرْتُهُ فِي نَفْسِي، وَإِنْ ذَكَرَنِي فِي مَلَإٍ ذَكَرْتُهُ فِي مَلَإٍ خَيْرٍ مِنْ مَلَئِهِ.',source:'صحيح البخاري ومسلم',ref:'متفق عليه',topic:'الذكر والقرب من الله'}
+];
+
+// ── State ──────────────────────────────────
+let activeGrade = 'all';
+let activeTopic = 'all';
+let activeHadith = null;
+let sharhCache = {};
+
+// ── Build sidebar topics ────────────────────
+function buildSidebar() {
+  const counts = {};
+  ahadith.forEach(h => { counts[h.topic] = (counts[h.topic]||0)+1; });
+  const topics = Object.keys(counts).sort();
+  const sb = document.getElementById('sidebar');
+  topics.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'topic-btn';
+    btn.innerHTML = `${t} <span class="topic-count">${counts[t]}</span>`;
+    btn.onclick = () => filterTopic(t, btn);
+    sb.appendChild(btn);
+  });
+}
+
+function filterTopic(topic, btn) {
+  activeTopic = topic;
+  document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function setGrade(g, btn) {
+  activeGrade = g;
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = document.getElementById('srch').value.trim();
+  const data = ahadith.filter(h => {
+    const gOk = activeGrade === 'all' || h.grade === activeGrade;
+    const tOk = activeTopic === 'all' || h.topic === activeTopic;
+    const sOk = !q || h.text.includes(q) || h.narrator.includes(q) || h.topic.includes(q);
+    return gOk && tOk && sOk;
+  });
+  document.getElementById('cnt').textContent = data.length;
+  renderGrid(data);
+}
+
+function renderGrid(data) {
+  const g = document.getElementById('grid');
+  if (!data.length) { g.innerHTML = '<div style="padding:3rem;text-align:center;color:var(--ink3);grid-column:1/-1;font-family:Amiri,serif;font-size:1.4rem;">لم يُوجَد نتائج</div>'; return; }
+  g.innerHTML = data.map(h => `
+    <div class="qcard" onclick="openModal(${h.num})">
+      <div class="qcard-top">
+        <div class="qnum">${h.num}</div>
+        <div class="qcard-badges">
+          ${h.grade==='sahih'?'<span class="grade-s">✅ صحيح</span>':'<span class="grade-h">🟡 حسن</span>'}
+        </div>
+      </div>
+      <div class="qtext">${h.text}</div>
+      <div class="qmeta">
+        <span class="narrator-tag">${h.narrator}</span>
+        <span class="topic-tag">${h.topic}</span>
+      </div>
+      <div class="qcard-open-hint">اضغط للشرح ▾</div>
+    </div>`).join('');
+}
+
+// ── Modal ────────────────────────────────────
+function openModal(num) {
+  const h = ahadith.find(x => x.num === num);
+  if (!h) return;
+  activeHadith = h;
+  sharhCache = {};
+  document.getElementById('mnum').textContent = num;
+  document.getElementById('mtopic').textContent = h.topic;
+  document.getElementById('mhadith').textContent = h.text;
+  document.getElementById('mmeta').innerHTML = `
+    <div class="modal-row"><span class="mk">الراوي:</span><span class="mv">${h.narrator}</span></div>
+    <div class="modal-row"><span class="mk">المصدر:</span><span class="mv ltr">${h.source}</span></div>
+    <div class="modal-row"><span class="mk">الرقم:</span><span class="mv ltr">${h.ref}</span></div>
+    <div class="modal-row"><span class="mk">الدرجة:</span><span class="mv">${h.grade==='sahih'?'صحيح':'حسن'}</span></div>`;
+  document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sharhWrap').innerHTML = '';
+  document.getElementById('overlay').classList.add('open');
+}
+
+function maybeClose(e) {
+  if (e.target === document.getElementById('overlay')) closeModal();
+}
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+}
+
+// ── Scholar explanations ──────────────────────
+const scholars = {
+  sha: {
+    name:'الشيخ محمد متولي الشعراوي رحمه الله',
+    cls:'sh-sha',
+    prompt:'أنت الشيخ محمد متولي الشعراوي رحمه الله. اشرح هذا الحديث القدسي بأسلوبك المميز: التأمل الوجداني العميق في دقائق الألفاظ، وربطه بالواقع الإنساني والروح. اكتب فقرتين إلى ثلاث بالعربية الفصحى. لا تذكر اسمك.'
+  },
+  uth: {
+    name:'الشيخ محمد بن صالح العثيمين رحمه الله',
+    cls:'sh-uth',
+    prompt:'أنت الشيخ محمد بن صالح العثيمين رحمه الله. اشرح هذا الحديث القدسي بأسلوبك: تحليل علمي دقيق للألفاظ، استخراج الفوائد، الدقة العقدية. اكتب فقرتين إلى ثلاث بالعربية الفصحى المنهجية. لا تذكر اسمك.'
+  },
+  amr: {
+    name:'الشيخ عمرو خالد',
+    cls:'sh-amr',
+    prompt:'أنت الشيخ عمرو خالد. اشرح هذا الحديث القدسي بأسلوبك التطبيقي الحياتي: ربطه بالحياة اليومية والشباب، بصورة محفزة ومؤثرة. اكتب فقرتين إلى ثلاث. لا تذكر اسمك.'
+  }
+};
+
+const SHARH = {
+  "sha": {
+    1: "يا سبحان الله! انظر كيف يقول الحق تبارك وتعالى: «أنا عند ظنّ عبدي بي» — فجعل نفسه رهينة ظنّك أنت! هذا يعني أن الله أعطاك مفتاح كيف يعاملك، فإن ظننت به خيرًا وجدت الخير، وإن أحسنت الظن رأيت الإحسان. وانظر إلى قوله: «وأنا معه إذا ذكرني» — ليست مجرد إجابة دعاء، بل معيّة حقيقية، الله معك في لحظة ذكرك له. ثم قوله: «إن تقرّب إليّ شبرًا تقرّبت إليه ذراعًا» — هذا يبيّن أن الله لا يساوي إقبالك بمثله، بل يجازيك بأضعافه، فكأن الله يقول لك: اتخذ الخطوة الأولى وأنا أتمّ الباقي.",
+    2: "ما أعظم هذا الحديث القدسي! كلمتان فقط تحملان سرًّا إلهيًّا عجيبًا: «أنفق أُنفق عليك» — والله لو كان في خزانة أموالك قدر ما في السماوات والأرض وأنفقته كله، لم تنقص خزانة الله شيئًا. والعجيب أن الله يقول «أُنفق عليك»، لا «أعطيك» فقط، بل ينفق عليك من فيض لا يُحصى. فالإنفاق لا يُفقر، كما أن حبّة القمح لا تموت حين تُلقى في الأرض، بل تُنبت سبع سنابل.",
+    3: "هذا الحديث القدسي يضمّ كلمات الله لعباده جميعًا — وانظر كيف يبدأ كل مقطع بـ«يا عبادي»، نداء يحمل المحبة والقُرب. قوله: «إني حرّمت الظلم على نفسي» — هذا إعلان إلهي بالعدل المطلق، فالله لا يظلم أحدًا. ثم ينتهي بأعظم وعد: «أغفر الذنوب جميعًا» — لم يقل بعضها، ولم يقل كبارها أو صغارها، بل «جميعًا»! فلا تقنط من رحمة الله أبدًا.",
+    4: "يا للعظمة! الله يقول: «من عادى لي وليًّا فقد آذنته بالحرب» — أي أعلنت عليه الحرب أنا الله ربّ العالمين! فمن يجرؤ أن يحارب الله؟ ثم يتحوّل الحديث إلى أجمل وصف للرحلة نحو الله: النوافل تُراكم حتى تُحبّ، والمحبة الإلهية تجعل الله هو بصرك وسمعك وحركتك كلها — وهذا هو كمال التوحيد والتوكل.",
+    5: "الصيام عبادة سرية لا يراها إلا الله — لذا قال: «الصوم لي وأنا أجزي به» دون أن يحدّد الجزاء، لأن جزاء الله لا يتّسع له الحصر. وقوله: «وللصائم فرحتان» — الفرحة الأولى بالدنيا حين يرى أن الله قبل صومه، والفرحة الكبرى حين يلقى ربه فيجد أن تلك الساعات الجوعى قد حوّلت إلى نور وبهجة لا تنقطع.",
+    6: "كل ما يصفه الخيال وكل ما يحلم به الإنسان في أعلى طموحاته — لم يصل إلى ما أعدّه الله للصالحين! «ما لا عين رأت ولا أذن سمعت ولا خطر على قلب بشر» — ثلاثة نفي لكل حواس الإدراك الإنساني، لأن ما عند الله فوق طاقة الإدراك البشري أصلًا. فلا تقلّل من الجنة بتصوّرك الصغير.",
+    7: "هذا الحديث يكشف سرًّا من أسرار الخلق: قبل أن يُخلق أحد، كتب الله في كتابه العظيم على العرش: «إن رحمتي غلبت غضبي». فالرحمة هي الأصل والغضب استثناء، والله يريد أن تعيش على هذا الأصل — أن تلقاه برحمة لا بخوف.",
+    8: "يا سبحان الله! لمّا همّ بالسيئة ولم يفعل، تُكتب له حسنة — وهذا يعني أن مجرّد الانكفاف عن المعصية طاعةٌ! وحين تفعل الحسنة تُكتب عشرًا. فأين العدل الذي يتساوى فيه الجزاء والعمل؟ هذا فضلٌ لا حساب!",
+    9: "المتحابّون في الله — أي الذين تجمعهم المحبة لأجل الله لا لمصلحة دنيوية — لهم منابر من نور يوم القيامة! وانظر إلى من يغبطهم: الأنبياء والشهداء! فعلاقتك الصادقة مع أخ في الله قد ترفعك لمنزلة يتمنّاها الشهداء.",
+    10: "الله هو الذي يُقلّب الليل والنهار — فحين تسبّ الدهر، فأنت تسبّ فعل الله لا الوقت نفسه. والجميل أن الله هنا يقول «يؤذيني» — وهذا تعبير تقريبي يُفهم منه أن الله يكره هذا الفعل كراهة شديدة.",
+    11: "الصلاة حوار مباشر بين العبد وربّه! كل آية من الفاتحة يردّ عليها الله بجواب مخصوص. فأنت لست تقرأ نصًّا بل تتكلّم مع الله، والله يسمعك ويجيبك لحظة بلحظة — فاقرأ الفاتحة بعد اليوم بقلب حاضر.",
+    12: "الكبرياء لله وحده — فمن تكبّر على عباد الله فقد نازع الله في ردائه! وهذا يكشف حقيقة الكبر: أنه سرقة صفة إلهية لا تليق بمخلوق.",
+    13: "ثلاثة يخاصمهم الله يوم القيامة — وكلهم اشتركوا في نقض العهد أو ظلم الضعيف. فاحذر أن تكون ممن يتخذ الله خصمًا، وما أشدّ أن يكون الله خصمك لا حكمًا!",
+    14: "عيادة المريض ليست واجبًا اجتماعيًّا فحسب — بل هي في الحقيقة عيادة وجه الله! هذا الحديث يُعلمنا أن الله يتجلّى في وجه المظلوم والمريض والجائع، فمن خدمهم فقد وجد الله.",
+    15: "في أقصر صيغة وأجملها: «أنا مع عبدي حين يذكرني وتحرّكت بي شفتاه» — اللحظة التي تذكر الله فيها، حتى بلا صوت وإنما بتحرّك الشفاه، تكون محاطًا بمعية الله الخاصة. فلا تغفل.",
+    16: "الله لا يُغلق باب التوبة ليلًا ولا نهارًا — يبسط يده بالليل لمسيء النهار وبالنهار لمسيء الليل. فما لم تطلع الشمس من مغربها، لا يُسدّ هذا الباب. فلا تؤخّر التوبة.",
+    17: "«ما له عندي جزاء إلا الجنة» — قولٌ حاسم. من فقد أحبّ الناس إليه فاحتسب، كان جزاؤه لا جزاء صغيرًا ولا وعدًا مشروطًا، بل الجنة مباشرة.",
+    18: "لو كانت ذنوبك مثل السحاب في عنان السماء، ثم استغفرت — غفر الله ولا يبالي! هذا الحديث ينسف اليأس من أساسه. فليس هناك ذنب أكبر من رحمة الله.",
+    19: "الدعاء والرجاء هما مفتاح المغفرة — من لم يقطع الرجاء، لم يقطع الله عنه المغفرة. وختم بأعظم بشارة: لو جئت بقراب الأرض خطايا، لقابلتك بقرابها مغفرة!",
+    20: "في ثلث الليل الأخير ينزل الله إلى سماء الدنيا ينادي: من يدعوني؟ من يسألني؟ — والمؤمن نائم! فمن استيقظ في هذه اللحظة ودعا، فقد وجد الله في أقرب مواطن استجابته.",
+    21: "من أحبّ لقاء الله أحبّ الله لقاءه — فاللهفة على الآخرة ليست حزنًا على الدنيا، بل هي أمارة على أن الله يحبّ لقاءك.",
+    22: "سبّ الدهر طعنٌ في الحكمة الإلهية — فلا تشكُ من الظروف وكأنها ظالمة لك، بل انظر إلى أن وراء كل ظرف تدبيرًا إلهيًّا.",
+    23: "الذكر في السرّ حضور مع الله، والذكر في الجماعة تجلّي الله في ملأ أشرف من ملأك. فلا تستصغر ذكرك مهما كان وضعك.",
+    24: "الإخلاص شرط قبول العمل — من خالط عمله شيء من الرياء أو حبّ الثناء، لم يقبله الله. فنقّ نيّتك قبل كل عمل.",
+    25: "الله لا ينظر إلى وجهك ولا إلى مالك — بل إلى قلبك! فما جدوى الجمال إن قبُح القلب؟ وما قيمة الفقر إن طهُر القلب؟",
+    26: "مجالس القرآن مجالس السكينة والرحمة والملائكة — فلا تُفرّط في مجلس علم أو تلاوة، فإن الله يذكر أهله في الملأ الأعلى.",
+    27: "الفطرة الإنسانية أصلها التوحيد، والشيطان هو من يُحرفها — فكل مولود جاء مسلمًا بفطرته.",
+    28: "الله لا يحتاج شريكًا في العمل — فمن أراد بعمله الدنيا والناس، تركه الله مع من أشرك معه.",
+    29: "تفرّغ لله والله يملأ صدرك غنى — وإن ملأت وقتك بالدنيا، لم تجد راحة ولم يسدّ الله فقرك. فالغنى الحقيقي في القلب لا في المال.",
+    30: "لو أن الكون كله كان على أتقى قلب، ما زاد ذلك في ملك الله شيئًا — وهذا يعني أن عبادتك لله لا لأنه يحتاجها، بل لأنك أنت تحتاجها لتكمل.",
+    31: "لو أن الإنس والجن وقفوا في صعيد واحد وسألوا الله جميعًا فأُعطوا — ما نقص ذلك من خزائن الله إلا كما ينقص الإبرة حين تُغمس في البحر. هذا هو الكرم الإلهي.",
+    32: "كلّما نوى الإنسان خيرًا وفعله، رَبَح إلى سبعمئة ضعف وأكثر — فالخير عند الله لا حدود لمضاعفته.",
+    33: "في الجنة يسأل الله أهلها: هل تشتهون شيئًا؟ — وحين لا يجدون شيئًا ليطلبوه، يقول: «رضائي». فرضا الله هو فوق كل نعيم.",
+    34: "الحسنة بعشر والسيئة بواحدة — وحتى السيئة قد يغفرها الله! فالميزان كله في جانب العبد.",
+    35: "ظنّك بالله هو الذي يرسم طريق معاملته لك — فلا تسيء الظن بالله أبدًا، فإن الله يكون عند ظنّك.",
+    36: "الصدقة الطيبة يربّيها الرحمن بيمينه حتى تصير مثل الجبل — فلا تحتقر الصدقة القليلة، فإن الله ينمّيها كما تنمو البذرة.",
+    37: "أعمالك هي رصيدك — لا يُظلم أحد، ولا يُنسى فضل، ولا يُحمل على أحد ما لم يفعل.",
+    38: "الدعاء والرجاء مفتاحان لا يُردّان — من دعا الله راجيًا غُفر له على ما كان.",
+    39: "نعيم الجنة أعظم من أن تتخيّله — لأن الله أخفاه عن أعين الدنيا وأسماعها وقلوبها.",
+    40: "ختام الأربعين بأجمل حديث — فيه كل شيء: القرب والذكر والتقرّب والمعية. فابدأ يومك بذكر الله وستجده في كل شيء.",
+  },
+  "uth": {
+    1: "في هذا الحديث القدسي العظيم فوائد جليلة: الأولى: وجوب حسن الظن بالله تعالى، وهو من أعظم العبادات. الثانية: أن الذكر سببٌ لمعيّة الله الخاصة — وهي معية الحفظ والرعاية والتأييد. الثالثة: دليل على أن التقرّب إلى الله يستوجب تقرّبًا أعظم منه من الله، وهذا من أبلغ الترغيب في العمل الصالح. والمسألة العقدية: قوله «أتيته هرولة» صفة فعلية نُثبتها لله من غير تكييف ولا تمثيل.",
+    2: "هذا الحديث دليل على جواز الإنفاق في وجوه الخير كلها، وأن الإنفاق لا يُنقص المال بل يزيده ببركة الله. ومن الفوائد: أن المال في الحقيقة مال الله، والعبد مُستخلَف فيه، فمن أنفقه في طاعة الله كان كمن أنفق مال مالكه بإذنه فاستحق الثواب والزيادة. ومسألة فقهية: دلّ الحديث على أن البخل من كبائر الذنوب التي تحول دون إنفاق الله على العبد.",
+    3: "هذا الحديث أصل عظيم في العقيدة والأخلاق معًا. في العقيدة: تنزيه الله عن الظلم تنزيهًا قاطعًا — قال: «إني حرّمت الظلم على نفسي» وهذا يعني أنه منزّه عنه بالضرورة. وفي الأخلاق: طلب الهداية والرزق والكسوة من الله وحده. ومسألة مهمة: «استغفروني أغفر لكم» فيه دليل على أن الاستغفار يستوجب المغفرة حتمًا إذا صحّت شروطه.",
+    4: "فوائد الحديث: الأولى: تحريم إيذاء أولياء الله والمؤمنين. الثانية: أن الفرائض أفضل من النوافل في التقرّب إلى الله. الثالثة: أن المداومة على النوافل سببٌ لمحبة الله، وإذا أحبّه الله حفظه وأعانه. والمسألة العقدية: «كنت سمعه» تُفسَّر بأنه يحفظ سمعه وبصره وجوارحه فلا يستعملها إلا في طاعة الله.",
+    5: "من فوائد هذا الحديث: الأولى: أن ثواب الصيام مفوَّض إلى الله مباشرة لعظمته. الثانية: مشروعية استشعار الفرح بالعبادة، وهو من علامات قبولها. الثالثة: أن رائحة الصائم الطيبة عند الله دليل على أن الله يُقدّر التضحية بالشهوات في سبيله. وتنبيه: الفرحة الأولى مشروعة بالنعم وليست فرحًا بانتهاء العبادة.",
+    6: "دلّ الحديث على أن نعيم الجنة لا يمكن وصفه ولا تصوّره — وهذا يستلزم ألا يُغترّ بنعيم الدنيا الفاني. ومن الفوائد: أن الصالحين لهم نعيم خاص زائد على نعيم أهل الجنة بعمومهم. والمسألة العقدية: «أعددت» بصيغة الماضي يدلّ على أن الجنة موجودة الآن مُهيّأة لأهلها.",
+    7: "مسألة عقدية محورية: الرحمة صفة حقيقية لله ثابتة بالكتاب والسنة. وقوله «غلبت غضبي» لا يعني أن الغضب ضعيف، بل يعني أن الرحمة أكثر وأسبق ومقدَّمة على العقوبة. ومن فوائده: أن العبد لو رجا رحمة الله وعمل الأسباب أدرك الرحمة.",
+    8: "هذا الحديث من أعظم الأدلة على فضل الله ورحمته بعباده. فوائده: الأولى: العزم على السيئة دون فعلها لا إثم فيه. الثانية: العزم على الحسنة ثواب، وفعلها يضاعف. الثالثة: في هذا دليل على سعة رحمة الله وكرمه.",
+    9: "المحبة في الله درجة رفيعة من درجات الإيمان — وهي أن يجمع بين شخصين الحبُّ لأجل الله لا لمصلحة دنيوية. ومن فوائده: أن هؤلاء المتحابّين يكونون في مكانة يغبطهم عليها الأنبياء، وهذا يدلّ على عظم هذه الصفة.",
+    10: "النهي عن سبّ الدهر مسألة عقدية: لأن الدهر لا يُسبّ فهو لا يفعل، والفاعل الحقيقي هو الله، فمن سبّ الدهر فقد تعرّض لسبّ الله. ومن الفوائد: أن المصائب والأحداث بتقدير الله، فيجب الرضا والصبر لا الاعتراض.",
+    11: "الفاتحة حوار بين العبد والربّ — وهذا من أعظم الأدلة على مكانة هذه السورة. من فوائده: أن كلام العبد في الصلاة مسموع لله مباشرة. والمسألة الفقهية: وجوب قراءة الفاتحة في كل ركعة لأنها هي المقسومة بين العبد وربه.",
+    12: "الكبر من الصفات التي اختصّ بها الله — فالمخلوق إذا تكبّر فقد تعدّى طوره. والحديث دليل على تحريم الكبر تحريمًا قاطعًا.",
+    13: "الحديث دليل على أن الله يُعادي من يَغدر ويظلم الضعيف، وهو تحذير بالغ الشدة. والمسألة الفقهية: تحريم بيع الأحرار وإتلاف حقوق الأجراء من كبائر الذنوب.",
+    14: "الحديث تقرير لمبدأ الأخوة الإسلامية — فالمريض يستحق العيادة لأن الله يتجلّى في حاجة المحتاج. ومن الفوائد: التذكير بأن التقصير في حق الإخوة تقصير في حق يُحاسَب عليه.",
+    15: "هذا الحديث إشارة إلى أن الذكر يحقق المعية الإلهية — حتى لو كان الذكر مجرد تحرّك الشفاه. فلا تستهن بذكرك مهما كان خفيًّا.",
+    16: "الحديث دليل على أن باب التوبة مفتوح دائمًا — فمسيء النهار يتوب بالليل ومسيء الليل يتوب بالنهار. والمسألة العقدية: أن الله يبسط يده للتوبة على الحقيقة اللائقة بجلاله.",
+    17: "الحديث دليل على فضل الصبر على فقد الأحبة واحتساب الأجر — فمن فعل ذلك فجزاؤه الجنة مباشرة.",
+    18: "الحديث دليل قاطع على وجوب إحسان الظن بالله وعدم اليأس — فالاستغفار مقبول مهما عظمت الذنوب.",
+    19: "هذا الحديث يجمع ثلاثة أصول: الدعاء والرجاء والتوحيد — من أتى بها لقي الله بمغفرة تملأ الأرض.",
+    20: "النزول الإلهي في آخر الليل ثابت بهذا الحديث وغيره — ويُثبَت على الوجه اللائق بجلاله. والفقهية: أن هذا الوقت هو أفضل أوقات الدعاء والاستغفار.",
+    21: "الحديث يُثبت صفة المحبة لله على الوجه اللائق — وأن الله يُحبّ لقاء من يُحبّ لقاءه.",
+    22: "تكرار تحريم سبّ الدهر — تأكيد على خطورة هذا الأمر.",
+    23: "الذكر في السرّ أرفع من حيث التوحيد لكنّ الذكر في الجماعة له أثر في التعليم والتذكير. والله يذكر الذاكر في ملأ خير من ملئه.",
+    24: "الإخلاص شرط لصحة العمل وقبوله — والرياء مبطل للعمل قطعًا.",
+    25: "الله لا يحكم على الظواهر بل على القلوب — وهذا أصل عظيم في تقييم الناس والأعمال.",
+    26: "مجالس القرآن تنزل فيها الرحمة وتحفّ الملائكة — وهذا يدل على فضل التعلّم والتدارس.",
+    27: "الفطرة السليمة أصلها التوحيد — وانحراف الناس عنه بسبب الشياطين والبيئة لا بسبب الطبيعة.",
+    28: "الرياء شرك أصغر يُبطل العمل — والله غنيّ عن كل شريك.",
+    29: "التفرّغ للعبادة من أعظم أسباب الرزق والقلب المطمئن.",
+    30: "الله غنيٌّ عن العالمين — فعبادتنا لا تنفعه ومعصيتنا لا تضرّه.",
+    31: "عطاء الله لا ينقص خزائنه شيئًا — فلا يعجز الله عن إجابة أي دعاء.",
+    32: "تضعيف الحسنات يشمل العزم والفعل — وهذا من أعظم أبواب رحمة الله.",
+    33: "رضا الله هو أعلى نعيم الجنة — وهو فوق كل ما يُتصوّر.",
+    34: "الجزاء من جنس العمل — حسنة بعشر وسيئة بواحدة والعفو محتمل.",
+    35: "حسن الظن بالله واجب — والله عند ظنّ عبده به.",
+    36: "الصدقة تنمو عند الله — والكثير يصير جبلًا بتربية الرحمن.",
+    37: "العدل الإلهي مطلق — لا يُظلم أحد ولا تُضاع حسنة.",
+    38: "الدعاء مع الرجاء يستوجب المغفرة.",
+    39: "نعيم الجنة فوق الخيال البشري.",
+    40: "ختام الأربعين بأصل الأصول: القرب من الله بالذكر والتقرّب.",
+  },
+  "amr": {
+    1: "يا صاحبي! ربنا بيقول لك: أنت اللي بتحدد إزاي أعاملك! لو ظننت بي خيرًا وجدت الخير، ولو تقرّبت خطوة واحدة تقرّبت أنا خطوات! يعني إيه ده؟ يعني ربنا بيقولك: ابدأ أنت وأنا هكمّل! في وقت الأزمات والضغوط، لما تحس إن مفيش حل، خطوة واحدة نحو الله — صلاة، ذكر، دعاء — وهتلاقيه جايلك بكامل طاقته. الحياة فيها ضغوط، لكن عندك حلّ مضمون: تقرّب لله.",
+    2: "الاقتصاد الإلهي! ربنا بيقولك: أنفق وأنا أنفق عليك. ده مش كلام مجازي، ده وعد إلهي حقيقي. الشباب بتقولوا: «أنا مش معايا حاجة أنفقها» — حتى لو عندك جنيه واحد، أنفقه في سبيل الله ولو على شخص محتاج. اللي بيبخل بيحبس رزقه! وربنا بيفتحلك مصادر رزق ما كنتش تتخيلها.",
+    3: "ده الحديث القدسي الأشمل! ربنا بيكلّمنا كلنا: مش فارق تكون فقيرًا أو غنيًّا، عالمًا أو جاهلًا — كلكم عبادي وأنا بستقبل توبتكم. أعظم جملة في الحديث: «أغفر الذنوب جميعًا» — ليس بعضها! لو حياتك مليانة أخطاء، ربنا شايفها ومستعد يمسحها كلها. الشرط الوحيد: ارجع إليه.",
+    4: "صورة جميلة جدًّا عن العلاقة مع الله: كلّما اقتربت منه بالنوافل، بيحبّك ولما يحبّك بيحميك ويوفّقك في كل قرار. الشباب اللي بتتساءل «إزاي أعرف إن ربنا بيحبني؟» — الإجابة: هل جوارحك بتخدمك في الطاعة؟ هل بتلاقي نفسك بتتحاشى الحرام بدون مجهود؟ ده علامة المحبة الإلهية.",
+    5: "الصيام عبادة سرية بينك وبين الله — ما حدش يعرف غيرك وغيره. ولأنها سرية، ربنا بيجزي عليها هو بنفسه بدون حساب! والفرحتان: فرحة الإفطار اللي إحنا عارفينها، والفرحة التانية لمّا تلقى ربنا راضي عنك — وده أعظم يوم في حياتك.",
+    6: "ربنا بيقولك: اللي مستنّيك في الجنة ما حدش قادر يوصفه! مش عشان في سر أو كلام فاضي، لكن عشان هو أعلى من قدرة الخيال البشري. فلا تقلّل من الجنة بتصوّراتنا الصغيرة، وركّز في الطريق إليها.",
+    7: "الرحمة أصل وليست استثناء — ده معناه إن ربنا بدأ يعاملنا بالرحمة قبل ما نعمل أي حاجة. فلا تعيش في خوف دائم منه، بل عيش في حبّه ورجائه مع الخوف من معصيته.",
+    8: "حتى لمّا أردت المعصية ورجعت عنها — هتلاقي في صحيفتك حسنة! ده ربنا. يعني الهروب من الذنب نفسه عبادة. أما الحسنة فمن عشرة لسبعمائة! فأنت في كفّة ربح دايمًا لو اخترت الخير.",
+    9: "علاقاتك ممكن ترفعك لمستوى الأنبياء! المحبة في الله — يعني اللي بتحبّوا بعض لأجل الله — هتلاقوا منابر من نور يوم القيامة. خلي صحابتك للخير، وخلي الجماعة اللي حواليك إيجابية.",
+    10: "لمّا الأمور بتبقى صعبة، متشكيش من الأوقات! الله هو اللي بيصرّف الأمور، فالشكوى من الظروف هي شكوى من تدبير الله. بدلًا من كده، ادعُه يغيّر الظرف.",
+    11: "كل مرة بتقرأ الفاتحة في الصلاة، ربنا بيرد عليك آية آية! أنت بتتكلّم معه وهو بيتكلّم معك. فاقرأ الفاتحة بعد النهارده وإنت حاسس إن في حوار حقيقي بينك وبين ربنا.",
+    12: "الكبر حاجز بينك وبين الله — مش بس حاجز بينك وبين الناس. وربنا قال: من نازعني الكبرياء قذفته في النار. فالتواضع مش ضعف، ده قوة.",
+    13: "الله نفسه هو اللي بيخاصم الظالم يوم القيامة. فمن أكل حقوق الناس — الأجراء، المستضعفين — عدوّه يوم القيامة هو الله. فأدّ الأمانات وأعطِ كل ذي حق حقه.",
+    14: "لمّا تروح تزور مريض أو تساعد محتاج، أنت في الحقيقة بتقترب من الله — لأن الله بيقول: لو وجدته وجدتني. الخدمة الإنسانية هي من أقرب الطرق لله.",
+    15: "حركة الشفاه بذكر الله كافية لتحقيق معيّة الله — فلا تحتاج خلوة أو مسجد. في الشغل، في السيارة، في أي وقت.",
+    16: "في أيّ وقت من الليل أو النهار ترجع لله، هتلاقيه فاتح. ربنا لا يغلق باب التوبة حتى تطلع الشمس من مغربها. فلا تؤجّل الرجوع لله.",
+    17: "فقدان الأحبة من أشد المصائب — لكن من صبر واحتسب، كان جزاؤه مباشرة الجنة. الصبر مش معناه مش بتتألم، معناه بتؤمن بحكمة الله في الألم.",
+    18: "مهما كانت ذنوبك كثيرة — استغفر! ربنا بيقول: غفرت ولا أبالي. يعني حتى الذنوب اللي حاسس إنك مش تستحق مغفرتها — ربنا بيقولك: غفرتها.",
+    19: "الدعاء مع الرجاء ده مفتاح خزائن الله — ما دمت بتدعيه وما قطعتش الأمل فيه، هو مش حيقطع عنك المغفرة.",
+    20: "في ثلث الليل الأخير، ربنا قريب جدًّا وبيدعو: من يدعوني؟ — الدنيا نايمة وإنت صاحي تدعوه. ده وقت خاص جدًّا. ابدأ الليلة.",
+    21: "حبّ لقاء الله مش معناه إنك عايز تموت — معناه إنك بتشتاق لرحمته ورضاه. وكل ما اشتقت، ربنا اشتاق لك أكتر.",
+    22: "لا تشكُ من الظروف — الله هو اللي بيصرّفها. بدل الشكوى، اطلب منه يُحسّن الظرف.",
+    23: "في السر أو في الجماعة، الذكر مسموع — وربنا بيردّ عليه بذكر أعظم.",
+    24: "اعمل لوجه الله فقط — من عمل للناس ترك الله عمله للناس.",
+    25: "ربنا شايف قلبك مش وشّك — فاهتمّ بتطهير القلب أكتر من المظهر.",
+    26: "اجلس في مجلس علم أو تلاوة — الملائكة بتحفّك والرحمة بتنزل عليك.",
+    27: "إحنا وُلدنا على الفطرة السليمة — اللي بتعدّل الفطرة هو المحيط. فاختر محيطك بعناية.",
+    28: "الرياء سُمّ العمل — اعمل لله وحده وابعد عن طلب الثناء.",
+    29: "فرّغ وقتك لله ولو ساعة يوميًّا — وهتلاقي ربنا فاتح عليك أبواب ما تتخيّلهاش.",
+    30: "عبادتك لا تزيد ملك الله — لكنها ترفعك أنت. فاعبده لنفسك لا لأنه محتاجك.",
+    31: "اطلب من الله بجرأة — خزائنه لا تنضب. كل الدنيا لو طلبتها ما أنقصت ملكه.",
+    32: "كل حسنة تفعلها بتعود عليك بأضعافها — فلا تستحقر حسنة صغيرة.",
+    33: "في الجنة ربنا نفسه بيقول: رضائي هديّتي ليكم. وده فوق كل نعيم.",
+    34: "ميزان الله في صالحك — حسنة بعشر وسيئة بواحدة.",
+    35: "ظنّك بالله هو مستقبلك — فعش حسن الظن بالله دايمًا.",
+    36: "حتى الصدقة البسيطة ربنا بيربّيها بيده حتى تبقى جبل — فلا توقف.",
+    37: "حياتك في إيدك — أعمالك هي رصيدك عند الله.",
+    38: "ادعُ وارجُ — والله لن يخذلك.",
+    39: "الجنة تستاهل كل تعب الدنيا وزيادة.",
+    40: "اذكر الله في أي وقت — وهتحسّ بمعيّته في كل لحظة.",
+  },
+};
+
+function loadSharh(key) {
+  if (!activeHadith) return;
+  document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + key).classList.add('active');
+  const s = scholars[key];
+  const text = SHARH[key][activeHadith.num] || 'لم يُوجَد شرح لهذا الحديث.';
+  document.getElementById('sharhWrap').innerHTML = `
+    <div class="sharh-box">
+      <div class="sharh-head ${s.cls}">📖 ${s.name}</div>
+      <div class="sharh-text">${text.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>')}</div>
+    </div>`;
+}
+
+function printAll() { window.print(); }
+
+// ── Init ──────────────────────────────────────
+buildSidebar();
+applyFilters();
+</script>
+
+<!-- ═══ PRINT BUTTON ═══ -->
+<style>
+.print-fab {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #1C3D2A;
+  color: #F7F0E3;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 4px 16px rgba(28,61,42,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: transform 0.2s, background 0.2s;
+}
+.print-fab:hover { background: #2E6642; transform: scale(1.08); }
+@media print {
+  .print-fab, button, nav, header, footer,
+  .filters, .search-wrap, .chips, .tabs,
+  [class*="btn"], [class*="button"] { display: none !important; }
+  body { background: white !important; color: #111 !important; }
+  .card, .hadith-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ccc !important; background: white !important; }
+  * { animation: none !important; }
+  @page { margin: 2cm; size: A4; }
+}
+</style>
+<button class="print-fab" onclick="window.print()" title="طباعة">🖨️</button>
+</body>
+</html>
